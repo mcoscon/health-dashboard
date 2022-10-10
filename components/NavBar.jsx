@@ -6,11 +6,15 @@ import { AiOutlineCloseCircle } from 'react-icons/ai'
 const NavBar = (props) => {
 	const { hamburgerOpen, setHamburgerOpen } = props
 	console.log(hamburgerOpen)
+
+	const renderclassName = hamburgerOpen
+		? `shadow-md bg-cyan-900 w-60 h-full flex-col md:flex shadow-md ${
+				hamburgerOpen ? 'md:hidden fixed h-full z-50' : 'hidden'
+		  }`
+		: `shadow-md bg-cyan-900 w-60 h-full flex-col hidden md:flex shadow-md`
+
 	return (
-		<div
-			className={`flex-col ${hamburgerOpen ? 'fixed h-full' : 'hidden'} shadow-md md:flex bg-cyan-900 w-60`}
-			id='sidenavSecExample'
-		>
+		<div className={renderclassName} id='sidenavSecExample'>
 			<div className='px-6 pt-4 pb-2 mb-6'>
 				<a href='#!'>
 					<div className='flex items-center gap-5 text-white grow'>

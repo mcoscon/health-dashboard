@@ -29,10 +29,10 @@ const ActionsModal = () => {
 				<div className='relative w-full h-full max-w-2xl p-4 md:h-auto'>
 					<div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
 						<div className='flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600'>
-							<h3 className='text-xl font-semibold text-gray-900 dark:text-white'>Terms of Service</h3>
+							<h3 className='text-xl font-semibold text-black dark:text-white'>Terms of Service</h3>
 							<button
 								type='button'
-								className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'
+								className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-black rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'
 								data-modal-toggle='defaultModal'
 							>
 								<svg
@@ -75,7 +75,7 @@ const ActionsModal = () => {
 							<button
 								data-modal-toggle='defaultModal'
 								type='button'
-								className='text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-cyan-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600'
+								className='text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-cyan-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-black focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600'
 							>
 								Decline
 							</button>
@@ -93,7 +93,7 @@ const Table = () => {
 			<div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row md:items-start lg:items-center'></div>
 			<div className='relative w-full overflow-x-auto rounded-md shadow-md'>
 				<table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-					<thead className='text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
+					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
 						<tr>
 							<th scope='col' className='px-6 py-3'>
 								Patient Name
@@ -116,11 +116,8 @@ const Table = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
-							>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -148,10 +145,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								Apple iMac
 							</th>
@@ -180,10 +177,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								Apple AirPods
 							</th>
@@ -212,10 +209,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								Apple iMac
 							</th>
@@ -244,10 +241,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								Apple AirPods
 							</th>
@@ -276,10 +273,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								iPad Pro
 							</th>
@@ -308,10 +305,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								Magic Keyboard
 							</th>
@@ -340,10 +337,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								Smart Folio iPad Air
 							</th>
@@ -372,10 +369,10 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
-								className='px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white'
+								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
 							>
 								AirTag
 							</th>
@@ -408,8 +405,8 @@ const Table = () => {
 				</table>
 				<nav className='flex items-center justify-between p-4 bg-white' aria-label='Table navigation'>
 					<span className='text-sm font-normal text-gray-500 dark:text-gray-400'>
-						Showing <span className='font-semibold text-gray-900 dark:text-white'>1-8</span> of{' '}
-						<span className='font-semibold text-gray-900 dark:text-white'>1000</span>
+						Showing <span className='font-semibold text-black dark:text-white'>1-8</span> of{' '}
+						<span className='font-semibold text-black dark:text-white'>1000</span>
 					</span>
 					<ul className='inline-flex items-center -space-x-px'>
 						<li>

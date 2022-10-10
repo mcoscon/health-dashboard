@@ -75,7 +75,7 @@ const PatientListHeader = () => {
 
 	return (
 		<>
-			<header className='flex items-center justify-between p-3 md:bg-white bg-cyan-900'>
+			<header className='flex items-center justify-between p-3 shadow-md md:bg-white bg-cyan-900'>
 				<button className='flex md:hidden' onClick={() => setHamburgerOpen(true)}>
 					<GiHamburgerMenu className='text-white' />
 				</button>
@@ -135,9 +135,8 @@ const PatientListHeader = () => {
 					<BiCaretDown className='text-white md:text-black' />
 				</button>
 			</header>
-			<div className={`${hamburgerOpen ? 'fixed' : 'hidden'}  z-50 `}>
-				<NavBar hamburgerOpen={hamburgerOpen} setHamburgerOpen={setHamburgerOpen} />
-			</div>
+
+			{hamburgerOpen ? <NavBar hamburgerOpen={hamburgerOpen} setHamburgerOpen={setHamburgerOpen} /> : <></>}
 			<OrganisationInfo />
 		</>
 	)

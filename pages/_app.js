@@ -12,9 +12,11 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
   <Provider store={store}>
-    <div className='flex flex-row'>
-    <NavBar/>
-    <Component {...pageProps} />
+    <div className='flex flex-row min-h-screen'>
+      <div>
+        <NavBar/>
+      </div>
+      <Component {...pageProps} />
     </div>
   </Provider>
   )

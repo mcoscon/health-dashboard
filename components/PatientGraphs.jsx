@@ -74,7 +74,7 @@ const ChartsWrapper = (props) => {
 	return (
 		<>
 			<HighchartsReact
-				containerProps={{ style: { height: '100%', width: '100%' } }}
+				containerProps={{ style: { height: '100%', width: '100%', overFlow: 'hidden' } }}
 				highcharts={Highcharts}
 				options={options}
 			/>
@@ -84,7 +84,7 @@ const ChartsWrapper = (props) => {
 
 const PatientGraphs = () => {
 	return (
-		<div className='p-5 overflow-hidden w-[85vw] sm:w-[65vw] md:w-[50vw]'>
+		<div className='p-5  w-[85vw] sm:w-[65vw] md:w-[50vw] flex flex-col'>
 			<div className='flex flex-row items-center justify-between gap-4'>
 				<h3 className='mb-2'>VITALS GRAPHS</h3>
 				<div className='flex items-center gap-2'>
