@@ -25,7 +25,7 @@ const MoreInfoModal = () => {
 					</div>
 					<div className='relative p-4 modal-body'>
 						<p>
-							This is some placeholder content to show a vertically centered modal. We've added some extra
+							This is some placeholder content to show a vertically centered modal. Weve added some extra
 							copy here to show how vertically centering the modal works when combined with scrollable
 							modals. We also use some repeated line breaks to quickly extend the height of the content,
 							thereby triggering the scrolling. When content becomes longer than the predefined max-height
