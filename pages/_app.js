@@ -1,7 +1,23 @@
+import NavBar from '../components/NavBar'
 import '../styles/globals.css'
-
+import { Provider } from "react-redux";
+import {store} from '../store/store.jsx'
+import React, {useEffect} from 'react'
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  useEffect(() => {
+    const use = async () => {
+      (await import('tw-elements')).default;
+    };
+    use();
+  }, []);
+  return (
+  <Provider store={store}>
+    <div className='flex flex-row'>
+    <NavBar/>
+    <Component {...pageProps} />
+    </div>
+  </Provider>
+  )
 }
 
 export default MyApp
