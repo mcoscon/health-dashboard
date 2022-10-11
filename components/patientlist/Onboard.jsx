@@ -245,19 +245,16 @@ const PatientInfoTab = (props) => {
 					</div>
 					<div>
 						<h4 className='text-xs'>DATE OF BIRTH</h4>
-						<div className='flex items-center justify-center'>
-							<div className='mb-3 datepicker form-floating xl:w-96' data-mdb-toggle-button='false'>
-								<input
-									type='date'
-									className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
-									placeholder='Select a date'
-									data-mdb-toggle='datepicker'
-									{...register('dateOfBirth', { required: true })}
-								/>
-								{errors?.dateOfBirth && (
-									<h4 className='text-xs text-red-500'>Date of Birth is Required</h4>
-								)}
-							</div>
+
+						<div className='mb-3 datepicker form-floating' data-mdb-toggle-button='false'>
+							<input
+								type='date'
+								className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
+								placeholder='Select a date'
+								data-mdb-toggle='datepicker'
+								{...register('dateOfBirth', { required: true })}
+							/>
+							{errors?.dateOfBirth && <h4 className='text-xs text-red-500'>Date of Birth is Required</h4>}
 						</div>
 					</div>
 				</div>
@@ -274,36 +271,30 @@ const PatientInfoTab = (props) => {
 					<div>
 						<h4 className='text-xs'>ONBOARD DATE</h4>
 
-						<div className='flex items-center justify-center'>
-							<div className='mb-3 datepicker form-floating xl:w-96' data-mdb-toggle-button='false'>
-								<input
-									type='date'
-									className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
-									placeholder='Select a date'
-									data-mdb-toggle='datepicker'
-									{...register('onboardDate', { required: true })}
-								/>
-								{errors?.onboardDate && (
-									<h4 className='text-xs text-red-500'>Onboard Date is Required</h4>
-								)}
-							</div>
+						<div className='mb-3 datepicker form-floating' data-mdb-toggle-button='false'>
+							<input
+								type='date'
+								className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
+								placeholder='Select a date'
+								data-mdb-toggle='datepicker'
+								{...register('onboardDate', { required: true })}
+							/>
+							{errors?.onboardDate && <h4 className='text-xs text-red-500'>Onboard Date is Required</h4>}
 						</div>
 					</div>
 					<div>
 						<h4 className='text-xs'>EXPECTED END DATE</h4>
-						<div className='flex items-center justify-center'>
-							<div className='mb-3 datepicker form-floating xl:w-96' data-mdb-toggle-button='false'>
-								<input
-									type='date'
-									className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
-									placeholder='Select a date'
-									data-mdb-toggle='datepicker'
-									{...register('expectedEndDate', { required: true })}
-								/>
-								{errors?.expectedEndDate && (
-									<h4 className='text-xs text-red-500'>Expected End Date is Required</h4>
-								)}
-							</div>
+						<div className='mb-3 datepicker form-floating' data-mdb-toggle-button='false'>
+							<input
+								type='date'
+								className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
+								placeholder='Select a date'
+								data-mdb-toggle='datepicker'
+								{...register('expectedEndDate', { required: true })}
+							/>
+							{errors?.expectedEndDate && (
+								<h4 className='text-xs text-red-500'>Expected End Date is Required</h4>
+							)}
 						</div>
 					</div>
 				</div>
