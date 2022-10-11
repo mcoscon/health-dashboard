@@ -37,13 +37,13 @@ const NavBar = (props) => {
 						Management
 					</a>
 				</Link>
-				<Link href='/patientlist' className='relative'>
+				<Link href='/pharmacy' className='relative'>
 					<a
 						className='flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm text-white transition duration-300 ease-in-out rounded-lg text-ellipsis whitespace-nowrap hover:text-cyan-600 hover:bg-white font-Karla-Bold'
 						data-mdb-ripple='true'
 					>
 						<RiBluetoothLine size={20} />
-						Pharmacy
+						Medication
 					</a>
 				</Link>
 				<Link href='/patientlist' className='relative'>

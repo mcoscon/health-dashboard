@@ -105,7 +105,7 @@ const PatientListHeader = () => {
 						placeholder='Search for patient'
 					/>
 				</div>
-				<div className='flex-row justify-between hidden gap-6 md:flex'>
+				<div className='flex-row justify-end hidden gap-6 md:flex'>
 					<OrganisationStats />
 					<button
 						type='button'
@@ -116,24 +116,24 @@ const PatientListHeader = () => {
 						<AiOutlinePlus size={20} />
 						Onboard
 					</button>
+					<button
+						className='flex items-center'
+						data-bs-toggle='collapse'
+						href='#collapseExample'
+						role='button'
+						aria-expanded='false'
+						aria-controls='collapseExample'
+					>
+						<img
+							src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
+							className='w-12 rounded-full shadow-lg '
+							alt='Avatar'
+						/>
+						<BiCaretDown className='text-white md:text-black' />
+					</button>
 				</div>
 
 				<Onboard showModal={showModal} setShowModal={setShowModal} />
-				<button
-					className='flex items-center'
-					data-bs-toggle='collapse'
-					href='#collapseExample'
-					role='button'
-					aria-expanded='false'
-					aria-controls='collapseExample'
-				>
-					<img
-						src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
-						className='w-12 rounded-full shadow-lg '
-						alt='Avatar'
-					/>
-					<BiCaretDown className='text-white md:text-black' />
-				</button>
 			</header>
 
 			{hamburgerOpen ? <NavBar hamburgerOpen={hamburgerOpen} setHamburgerOpen={setHamburgerOpen} /> : <></>}
