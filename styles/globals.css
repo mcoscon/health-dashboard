@@ -47,6 +47,11 @@ input[data-autocompleted] {
   background-color: transparent !important;
 }
 
+.nav-tabs .nav-link.active {
+  color: #0891b2;
+  border-color: #0891b2;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

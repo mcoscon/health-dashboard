@@ -163,3 +163,34 @@ const PatientGraphs = () => {
 }
 
 export default PatientGraphs
+
+// <div className='tab-content' id='tabs-tabContent'>
+// 			<div
+// 				className='tab-pane fade show active'
+// 				id='tabs-home'
+// 				role='tabpanel'
+// 				aria-labelledby='tabs-home-tab'
+// 				show
+// 				active
+// 			>
+// 				<PatientMedication />
+// 			</div>
+// 			<div className='tab-pane fade' id='tabs-profile' role='tabpanel' aria-labelledby='tabs-profile-tab'>
+// 				<div className='flex items-center px-4 py-2 text-xs font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer gap-7 align-center w-max active:bg-gray-300 ease rounded-2xl'>
+// 					<div>
+// 						<img
+// 							src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
+// 							className='w-12 rounded-full shadow-lg'
+// 							alt='Avatar'
+// 						/>
+// 					</div>
+// 					<div>
+// 						<h4 className='text-sm text-black'>Alex Wachinsky</h4>
+// 						<h4>Start Date: 02/04/22</h4>
+// 						<h4>End Date: 02/04/22</h4>
+// 						<h4>Diagnosis: Asthma</h4>
+// 					</div>
+// 					<FiArrowUpRight className='flex self-start' size={'1rem'} />
+// 				</div>
+// 			</div>
+// 		</div>
