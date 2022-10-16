@@ -1,97 +1,174 @@
-import { useEffect, React } from 'react'
+import { Tab } from '@headlessui/react'
+import { useEffect, React, useState } from 'react'
 import { BsBoxArrowInUpRight } from 'react-icons/bi'
 import { FiArrowUpRight } from 'react-icons/fi'
 
 const BasicPatientInfo = () => {
 	return (
-		<div>
-			<h4 className='mb-2 uppercase'>Selected Patient</h4>
-			<div className='flex items-center px-4 py-2 text-xs font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer gap-7 align-center w-max active:bg-gray-300 ease rounded-2xl'>
+		<div className='mb-6'>
+			<div className='grid grid-cols-2 gap-4'>
 				<div>
-					<img
-						src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
-						className='w-12 rounded-full shadow-lg'
-						alt='Avatar'
-					/>
+					<h4 className='mb-4 uppercase'>Selected Patient</h4>
+					<div className='relative'>
+						<div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
+							<svg
+								className='w-5 h-5 text-gray-500 dark:text-gray-400'
+								aria-hidden='true'
+								fill='currentColor'
+								viewBox='0 0 20 20'
+								xmlns='http://www.w3.org/2000/svg'
+							>
+								<path
+									fillRule='evenodd'
+									d='M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z'
+									clipRule='evenodd'
+								></path>
+							</svg>
+						</div>
+						<input
+							type='text'
+							id='table-search'
+							className='block w-full p-2 pl-10 text-sm text-gray-900 bg-white border-none rounded-lg shadow-sm lg:w-80 focus:ring-cyan-600 focus:border-cyan-600 font-Karla-Regular'
+							placeholder='Search for patient'
+						/>
+					</div>
 				</div>
-				<div>
-					<h4 className='text-sm text-black'>Alex Wachinsky</h4>
-					<h4>Start Date: 02/04/22</h4>
-					<h4>End Date: 02/04/22</h4>
-					<h4>Diagnosis: Asthma</h4>
+				<div className='flex items-center justify-between w-full px-4 py-2 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer gap-7 align-center active:bg-gray-300 ease rounded-2xl'>
+					<div>
+						<img
+							src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
+							className='w-12 rounded-full shadow-lg'
+							alt='Avatar'
+						/>
+					</div>
+					<div>
+						<h4 className='text-cyan-900'>Alex Wachinsky</h4>
+						<h4>Start Date: 02/04/22</h4>
+						<h4>End Date: 02/04/22</h4>
+						<h4>Diagnosis: Asthma</h4>
+					</div>
+					<FiArrowUpRight className='flex self-start' size={'1rem'} />
 				</div>
-				<FiArrowUpRight className='flex self-start' size={'1rem'} />
 			</div>
 		</div>
 	)
 }
 const PatientMedication = () => {
 	return (
-		<div>
-			<h4 className='mb-2 uppercase'>Current Medications</h4>
-			<div className='flex flex-row flex-wrap gap-2'>
-				<span className='flex flex-col px-4 py-1 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center w-max active:bg-gray-300 ease rounded-2xl'>
-					Panadol
-					<div className='w-full h-1 mb-1 bg-gray-200'>
-						<div className='h-1 bg-blue-600' style={{ width: '45%' }}></div>
-					</div>
-					<span className='flex justify-between gap-4 text-xs'>
-						<p>1/05/22</p>
-						<p>2/05/22</p>
+		<>
+			<div className='mb-4'>
+				<h4 className='mb-4 uppercase'>Active Medications</h4>
+				<div className='grid grid-cols-2 gap-4'>
+					<span className='flex flex-col gap-2 p-4 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer GRI align-center active:bg-gray-300 ease rounded-2xl'>
+						<h4 className='uppercase text-cyan-900'>Propanol 20mg Tab</h4>
+						<div className='w-full h-1 bg-gray-200'>
+							<div className='h-1 bg-cyan-600' style={{ width: '45%' }}></div>
+						</div>
+						<div className='flex justify-between gap-4 text-sm'>
+							<p>1st May 2022</p>
+							<p> to </p>
+							<p>2nd May 2022</p>
+						</div>
+						<div className='flex justify-between gap-4 text-sm'>
+							<div>
+								<h4 className='text-black'>Prescribed On:</h4>
+								<h4>1st May 2022</h4>
+							</div>
+							<div>
+								<h4 className='text-black'>Quantity:</h4>
+								<h4>40</h4>
+							</div>
+						</div>
+						<div>
+							<h4 className='text-black'>Instructions:</h4>
+							<h4>Take one daily until finished. Take after meal.wefwefed</h4>
+						</div>
 					</span>
-				</span>
-				<span className='flex flex-col px-4 py-1 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center w-max active:bg-gray-300 ease rounded-2xl'>
-					Methampethamine
-					<div className='w-full h-1 mb-1 bg-gray-200'>
-						<div className='h-1 bg-blue-600' style={{ width: '45%' }}></div>
-					</div>
-					<span className='flex justify-between gap-4 text-xs'>
-						<p>1/05/22</p>
-						<p>2/05/22</p>
+					<span className='flex flex-col gap-2 p-4 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center active:bg-gray-300 ease rounded-2xl '>
+						<h4 className='uppercase text-cyan-900'>Propanol 20mg Tab</h4>
+						<div className='w-full h-1 bg-gray-200'>
+							<div className='h-1 bg-cyan-600' style={{ width: '45%' }}></div>
+						</div>
+						<div className='flex justify-between gap-4 text-sm'>
+							<p>1st May 2022</p>
+							<p> to </p>
+							<p>2nd May 2022</p>
+						</div>
+
+						<div className='flex justify-between gap-4 text-sm'>
+							<div>
+								<h4 className='text-black'>Prescribed On:</h4>
+								<h4>1st May 2022</h4>
+							</div>
+							<div>
+								<h4 className='text-black'>Quantity:</h4>
+								<h4>40</h4>
+							</div>
+						</div>
+						<div className=''>
+							<h4 className='text-black'>Instructions:</h4>
+							<h4>Take one daily until finished. Take after meal. wefwed</h4>
+						</div>
 					</span>
-				</span>
-				<span className='flex flex-col px-4 py-1 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center w-max active:bg-gray-300 ease rounded-2xl'>
-					Panadol
-					<div className='w-full h-1 mb-1 bg-gray-200'>
-						<div className='h-1 bg-blue-600' style={{ width: '45%' }}></div>
-					</div>
-					<span className='flex justify-between gap-4 text-xs'>
-						<p>1/05/22</p>
-						<p>2/05/22</p>
-					</span>
-				</span>
-				<span className='flex flex-col px-4 py-1 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center w-max active:bg-gray-300 ease rounded-2xl'>
-					Methampethamine
-					<div className='w-full h-1 mb-1 bg-gray-200'>
-						<div className='h-1 bg-blue-600' style={{ width: '45%' }}></div>
-					</div>
-					<span className='flex justify-between gap-4 text-xs'>
-						<p>1/05/22</p>
-						<p>2/05/22</p>
-					</span>
-				</span>
-				<span className='flex flex-col px-4 py-1 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center w-max active:bg-gray-300 ease rounded-2xl'>
-					Panadol
-					<div className='w-full h-1 mb-1 bg-gray-200'>
-						<div className='h-1 bg-blue-600' style={{ width: '45%' }}></div>
-					</div>
-					<span className='flex justify-between gap-4 text-xs'>
-						<p>1/05/22</p>
-						<p>2/05/22</p>
-					</span>
-				</span>
-				<span className='flex flex-col px-4 py-1 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center w-max active:bg-gray-300 ease rounded-2xl'>
-					Methampethamine
-					<div className='w-full h-1 mb-1 bg-gray-200'>
-						<div className='h-1 bg-blue-600' style={{ width: '45%' }}></div>
-					</div>
-					<span className='flex justify-between gap-4 text-xs'>
-						<p>1/05/22</p>
-						<p>2/05/22</p>
-					</span>
-				</span>
+				</div>
 			</div>
-		</div>
+			<div className='mb-4'>
+				<h4 className='mb-4 uppercase'>Previous Medications</h4>
+				<div className='grid grid-cols-2 gap-4'>
+					<span className='flex flex-col gap-2 p-4 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer GRI align-center active:bg-gray-300 ease rounded-2xl'>
+						<h4 className='uppercase text-cyan-900'>Propanol 20mg Tab</h4>
+						<div className='w-full h-1 bg-gray-200'>
+							<div className='h-1 bg-cyan-600' style={{ width: '100%' }}></div>
+						</div>
+						<div className='flex justify-between gap-4 text-sm'>
+							<p>1st May 2022</p>
+							<p> to </p>
+							<p>2nd May 2022</p>
+						</div>
+						<div className='flex justify-between gap-4 text-sm'>
+							<div>
+								<h4 className='text-black'>Prescribed On:</h4>
+								<h4>1st May 2022</h4>
+							</div>
+							<div>
+								<h4 className='text-black'>Quantity:</h4>
+								<h4>40</h4>
+							</div>
+						</div>
+						<div>
+							<h4 className='text-black'>Instructions:</h4>
+							<h4>Take one daily until finished. Take after meal.wefwefed</h4>
+						</div>
+					</span>
+					<span className='flex flex-col gap-2 p-4 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer align-center active:bg-gray-300 ease rounded-2xl '>
+						<h4 className='uppercase text-cyan-900'>Propanol 20mg Tab</h4>
+						<div className='w-full h-1 bg-gray-200'>
+							<div className='h-1 bg-cyan-600' style={{ width: '100%' }}></div>
+						</div>
+						<div className='flex justify-between gap-4 text-sm'>
+							<p>1st May 2022</p>
+							<p> to </p>
+							<p>2nd May 2022</p>
+						</div>
+
+						<div className='flex justify-between gap-4 text-sm'>
+							<div>
+								<h4 className='text-black'>Prescribed On:</h4>
+								<h4>1st May 2022</h4>
+							</div>
+							<div>
+								<h4 className='text-black'>Quantity:</h4>
+								<h4>40</h4>
+							</div>
+						</div>
+						<div className=''>
+							<h4 className='text-black'>Instructions:</h4>
+							<h4>Take one daily until finished. Take after meal. wefwed</h4>
+						</div>
+					</span>
+				</div>
+			</div>
+		</>
 	)
 }
 const PatientListDropDown = () => {
@@ -101,7 +178,6 @@ const PatientListDropDown = () => {
 				<div className='relative dropdown'>
 					<button
 						className='
-
           px-6
           py-2.5
           bg-cyan-600
@@ -144,7 +220,7 @@ const PatientListDropDown = () => {
 						</svg>
 					</button>
 					<ul
-						className='absolute z-50 hidden float-left w-full py-2 m-0 mt-1 text-base text-left list-none bg-white border-none rounded-lg shadow-lg dropdown-menu min-w-max bg-clip-padding'
+						className='absolute z-50 float-left w-full py-2 m-0 mt-1 text-base text-left list-none bg-white border-none rounded-lg shadow-lg dropdown-menu min-w-max bg-clip-padding'
 						aria-labelledby='dropdownMenuButton1'
 					>
 						<li>
@@ -217,111 +293,46 @@ const SelectedPatient = () => {
 }
 
 const PrescribeMedication = () => {
+	const [selectedIndex, setSelectedIndex] = useState(0)
 	return (
-		<ul className='stepper' data-mdb-stepper='stepper'>
-			<li className='stepper-step stepper-active'>
-				<div className='stepper-head'>
-					<span className='stepper-head-icon'> 1 </span>
-					<span className='stepper-head-text'> step1 </span>
-				</div>
-				<div className='stepper-content'>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-					et dolore magna aliqua.
-				</div>
-			</li>
-			<li className='stepper-step'>
-				<div className='stepper-head'>
-					<span className='stepper-head-icon'> 2 </span>
-					<span className='stepper-head-text'> step2 </span>
-				</div>
-				<div className='stepper-content'>
-					Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.
-				</div>
-			</li>
-			<li className='stepper-step'>
-				<div className='stepper-head'>
-					<span className='stepper-head-icon'> 3 </span>
-					<span className='stepper-head-text'> step3 </span>
-				</div>
-				<div className='stepper-content'>
-					Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-					pariatur.
-				</div>
-			</li>
-		</ul>
-		// <ol className='border-l-2 border-blue-600'>
-		// 	<li>
-		// 		<div className='flex items-center flex-start'>
-		// 			<div className='flex items-center justify-center w-4 h-4 mr-3 -mt-2 -ml-2 bg-blue-600 rounded-full'></div>
-		// 			<h4 className='-mt-2 text-gray-800 uppercase'>Select Patient </h4>
-		// 		</div>
-		// 		<div className='pb-6 mt-2 mb-6 ml-6'>
-		// 			<div className='flex justify-between gap-7'>
-		// 				<input
-		// 					type='text'
-		// 					id='table-search'
-		// 					className='text-sm text-gray-900 bg-white border-none rounded-lg shadow-sm lg:w-60 focus:ring-gray-500 focus:border-gray-500 font-Karla-Regular'
-		// 					placeholder='Search for patient'
-		// 				/>
-		// 				<PatientListDropDown />
-		// 			</div>
-		// 			<SelectPatientTabs />
-		// 		</div>
-		// 	</li>
-		// 	<li>
-		// 		<div className='flex items-center flex-start'>
-		// 			<div className='flex items-center justify-center w-4 h-4 mr-3 -mt-2 -ml-2 bg-blue-600 rounded-full'></div>
-		// 			<h4 className='-mt-2 text-gray-800 uppercase'>Select Prescription</h4>
-		// 		</div>
-		// 		<div className='pb-6 mb-6 ml-6'>
-		// 			<a
-		// 				href='#!'
-		// 				className='text-sm text-blue-600 transition duration-300 ease-in-out hover:text-blue-700 focus:text-blue-800'
-		// 			>
-		// 				12 January, 2022
-		// 			</a>
-		// 			<p className='mt-2 mb-4 text-gray-700'>
-		// 				Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-		// 				laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
-		// 				beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-		// 				odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-		// 			</p>
-		// 			<button
-		// 				type='button'
-		// 				className='inline-block px-4 py-1.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
-		// 			>
-		// 				Read more
-		// 			</button>
-		// 		</div>
-		// 	</li>
-		// 	<li>
-		// 		<div className='flex items-center flex-start'>
-		// 			<div className='flex items-center justify-center w-4 h-4 mr-3 -mt-2 -ml-2 bg-blue-600 rounded-full'></div>
-		// 			<h4 className='-mt-2 text-xl font-semibold text-gray-800'>Set Intake and Duration</h4>
-		// 		</div>
-		// 		<div className='pb-6 mb-6 ml-6'>
-		// 			<a
-		// 				href='#!'
-		// 				className='text-sm text-blue-600 transition duration-300 ease-in-out hover:text-blue-700 focus:text-blue-800'
-		// 			>
-		// 				27 December, 2021
-		// 			</a>
-		// 			<p className='mt-2 mb-4 text-gray-700'>
-		// 				At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-		// 				deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
-		// 				provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et
-		// 				dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-		// 			</p>
-		// 			<button
-		// 				type='button'
-		// 				className='inline-block px-4 py-1.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out'
-		// 			>
-		// 				Read more
-		// 			</button>
-		// 		</div>
-		// 	</li>
-		// </ol>
+		<form /* onSubmit={handleSubmit(onSubmit)} */>
+			<Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
+				<Tab.List className='flex p-2 mb-4 space-x-5 text-center text-gray-400 bg-white border-2 border-solid font-Karla-Bold rounded-2xl hover:border-cyan-600'>
+					<Tab
+						className={({ selected }) =>
+							selected
+								? 'focus:outline-0 outline-0 flex flex-row text-cyan-900'
+								: ' text-gray-400 flex flex-row align-middle justify-center'
+						}
+					>
+						Select Patient
+					</Tab>
+					<div>{'>'}</div>
+					<Tab
+						/* 	disabled={Object.keys(errors).length !== 0} */
+						className={({ selected }) =>
+							selected
+								? 'focus:outline-0 outline-0 flex flex-row text-cyan-900'
+								: ' text-gray-400 flex flex-row align-middle justify-center '
+						}
+					>
+						Select Prescription and Intake Duration
+					</Tab>
+				</Tab.List>
+				<Tab.Panels>
+					<SelectPatientTab /* register={register} errors={errors} setTabIndex={setTabIndex}  */ />
+				</Tab.Panels>
+			</Tab.Group>
+		</form>
+	)
+}
+
+const SelectPatientTab = (props) => {
+	return (
+		<Tab.Panel>
+			<BasicPatientInfo />
+			<PatientMedication />
+		</Tab.Panel>
 	)
 }
 

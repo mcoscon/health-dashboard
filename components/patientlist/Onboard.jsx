@@ -69,20 +69,6 @@ const OnboardSignUp = () => {
 const Onboard = (props) => {
 	const dispatch = useDispatch()
 	return (
-		/* 		<GenericModal
-			ButtonProp={
-				<button
-					type='button'
-					onClick={() => dispatch(setVisibleTrue())}
-					className='flex flex-row items-center self-center justify-center gap-2 p-2 text-sm text-white rounded-lg bg-cyan-600 shadow-btnShadow font-Karla-Heavy grow-0'
-				>
-					<AiOutlinePlus size={20} />
-					ONBOARD
-				</button>
-			}
-			modalContent={<OnboardSignUp />}
-			
-		/> */
 		<div
 			className='fixed top-0 left-0 hidden w-full h-full overflow-x-hidden overflow-y-auto outline-none modal fade'
 			id='onboardModal'
