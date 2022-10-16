@@ -43,7 +43,7 @@ const NavBar = (props) => {
 						data-mdb-ripple='true'
 					>
 						<RiBluetoothLine size={20} />
-						Medication
+						Prescriptions
 					</a>
 				</Link>
 				<Link href='/patientlist' className='relative'>
