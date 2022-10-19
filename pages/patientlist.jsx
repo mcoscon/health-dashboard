@@ -89,11 +89,11 @@ const ActionsModal = () => {
 
 const Table = () => {
 	return (
-		<div className='flex flex-col w-full p-7'>
-			<div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row md:items-start lg:items-center'></div>
+		<div className='flex flex-col w-full overflow-y-scroll p-7'>
+			<div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row md:items-start lg:items-center '></div>
 			<div className='relative w-full overflow-x-auto rounded-md shadow-md'>
 				<table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
+					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100  dark:bg-gray-700 dark:text-gray-400'>
 						<tr>
 							<th scope='col' className='px-6 py-3'>
 								Patient Name
@@ -305,6 +305,325 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
+						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+								Apple Watch
+							</th>
+							<td className='px-6 py-1'>Black</td>
+							<td className='px-6 py-1'>Watches</td>
+							<td className='px-6 py-1'>$199</td>
+							<td className='px-6 py-1 text-center'>
+								<div className='flex flex-row items-center gap-4'>
+									<button>
+										<FiSettings />
+									</button>
+									<div>
+										<div className='text-center bg-green-100 border border-green-300 rounded-sm'>
+											<h4 className='text-xs text-black'>RSD-12</h4>
+										</div>
+										<h5 className='text-xs'>24 Sep 2022, 11:45am</h5>
+									</div>
+								</div>
+							</td>
+							<td className='px-6 py-2'>
+								<Link href='/patient'>
+									<a className='flex flex-row items-center justify-center gap-1 border-2 border-transparent rounded-md cursor-pointer font-Karla-Bold text-slate-500 hover:border-slate-500 hover:border-2'>
+										<RiExternalLinkLine />
+										Dashboard
+									</a>
+								</Link>
+							</td>
+						</tr>
 						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
 							<th
 								scope='row'
@@ -405,8 +724,8 @@ const Table = () => {
 				</table>
 				<nav className='flex items-center justify-between p-4 bg-white' aria-label='Table navigation'>
 					<span className='text-sm font-normal text-gray-500 dark:text-gray-400'>
-						Showing <span className='font-semibold text-black dark:text-white'>1-8</span> of{' '}
-						<span className='font-semibold text-black dark:text-white'>1000</span>
+						Showing <span className='font-semibold text-black dark:text-white'>1-20</span> of{' '}
+						<span className='font-semibold text-black dark:text-white'>100</span>
 					</span>
 					<ul className='inline-flex items-center -space-x-px'>
 						<li>
@@ -501,7 +820,7 @@ const Table = () => {
 
 const PatientList = () => {
 	return (
-		<div className='flex flex-col w-full'>
+		<div className='flex flex-col w-full max-h-screen'>
 			<PatientListHeader />
 			{/* 	<OrganisationInfo /> */}
 			<Table />

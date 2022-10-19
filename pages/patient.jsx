@@ -14,7 +14,7 @@ const Patient = () => {
 				<PatientGraphs />
 			</div>
 		</div> */
-		<div className='flex flex-col items-center w-full md:items-start md:flex-row md:justify-start p-7 gap-7'>
+		<div className='flex flex-col items-center w-full md:items-start md:flex-row md:justify-startPpatie p-7 gap-7'>
 			<div className='flex flex-col gap-7 shrink-0'>
 				<PatientDetails />
 				<PatientDiary />
