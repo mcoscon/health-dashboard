@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
   <Provider store={store}>
-    <div className='flex flex-row min-h-screen'>
+    <div className='flex flex-col min-h-screen md:flex-row'>
       <div>
         <NavBar/>
       </div>

@@ -93,7 +93,7 @@ const Table = () => {
 			<div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row md:items-start lg:items-center '></div>
 			<div className='relative w-full overflow-x-auto rounded-md shadow-md'>
 				<table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100  dark:bg-gray-700 dark:text-gray-400'>
+					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
 						<tr>
 							<th scope='col' className='px-6 py-3'>
 								Patient Name
@@ -821,13 +821,8 @@ const Table = () => {
 const PatientList = () => {
 	return (
 		<div className='flex flex-col w-full max-h-screen'>
-			<PatientListHeader />
-			{/* 	<OrganisationInfo /> */}
 			<Table />
 		</div>
-		/* 		<div className='flex flex-col w-full gap-5 p-7'>
-			<Table />
-		</div> */
 	)
 }
 

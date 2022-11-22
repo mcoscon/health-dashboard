@@ -47,6 +47,18 @@ input[data-autocompleted] {
   background-color: transparent !important;
 }
 
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+  font-family: Karla-Regular;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+  /*remove the resize handle on the bottom right*/
+}
 /* .nav-tabs .nav-link.active {
   color: #0891b2;
   border-color: #0891b2;
@@ -64,6 +76,10 @@ input[data-autocompleted] {
  */
 
 /* karla-regular - latin */
+.nav-tabs .nav-link.active {
+  color: black;
+  border-color: #0891b2;
+}
 @font-face {
   font-family: 'Karla-Regular';
   font-style: normal;
