@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setVisibleFalse, setVisibleTrue } from '../store/modalSlice'
+import { setVisibleFalse, setVisibleTrue } from '../store/notificationSlice'
 export default function GenericModal(props) {
 	/* const ButtonProp = props.ButtonProp */
 	const { ButtonProp, modalContent } = props

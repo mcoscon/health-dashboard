@@ -1,13 +1,16 @@
-import { Tab } from '@headlessui/react'
-import { useEffect, React, useState } from 'react'
-import { BsBoxArrowInUpRight } from 'react-icons/bi'
+import { React, useState } from 'react'
 import { FiArrowUpRight } from 'react-icons/fi'
 import { AiOutlinePlusCircle } from 'react-icons/ai'
 import AddMedicationModal from './AddMedicationModal'
-import PatientListHeader from '../patientlist/PatientListHeader'
+import NotesDrawer from './NotesDrawer'
+import NotificationAlert from '../ui-components/NotificationAlert'
+import { useDispatch, useSelector } from 'react-redux'
+import { setVisibleTrue } from '../../store/notificationSlice'
 
 const BasicPatientInfo = () => {
 	const [isOpen, setIsOpen] = useState(false)
+	const _notificationState = useSelector((state) => state.notificationState.value)
+	const dispatch = useDispatch()
 	return (
 		<>
 			<div className='mb-6'>
@@ -59,7 +62,7 @@ const BasicPatientInfo = () => {
 								onClick={() => setIsOpen(true)}
 								className='flex flex-row items-center justify-center gap-2 p-2 text-xs transition duration-150 ease-in-out bg-white rounded-lg text-cyan-600 shadow-btnShadow md:w-full font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
 								data-bs-toggle='modal'
-								data-bs-target='#exampleModalCenteredScrollable'
+								data-bs-target='#prescribeMedicationModal'
 							>
 								<AiOutlinePlusCircle size={20} />
 								PRESCRIBE
@@ -70,7 +73,7 @@ const BasicPatientInfo = () => {
 					<div className='flex flex-col flex-1 gap-2 p-4 text-sm font-semibold transition duration-300 bg-white cursor-pointer text-cyan-900 align-center ease rounded-2xl'>
 						<div className='flex justify-between'>
 							<h4 className='uppercase'>NOTES</h4>
-							<h4 className='uppercase text-cyan-600'>SEE ALL</h4>
+							<NotesDrawer />
 						</div>
 						<div className='flex flex-col rounded-lg bg-cyan-700 bg-opacity-10'>
 							<textarea
@@ -79,7 +82,7 @@ const BasicPatientInfo = () => {
 							></textarea>
 							<button
 								type='button'
-								/* 		onClick={() => setIsOpen(true)} */
+								onClick={() => dispatch(setVisibleTrue())}
 								className='flex items-end self-end p-2 m-2 text-xs text-white transition duration-150 ease-in-out rounded-lg bg-cyan-700 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
 								/* 	data-bs-toggle='modal'
 								data-bs-target='#exampleModalCenteredScrollable' */
@@ -88,7 +91,7 @@ const BasicPatientInfo = () => {
 							</button>
 						</div>
 						<div>
-							<h4 className='text-xs'>Note 1</h4>
+							<h4 className='text-xs'>Latest Note</h4>
 							<div className='flex justify-between'>
 								<p className='text-xs font-semibold text-gray-500'>Probably needs more propanol</p>
 								<p className='text-xs font-semibold text-gray-500'>20 Nov 18</p>
@@ -97,6 +100,7 @@ const BasicPatientInfo = () => {
 					</div>
 				</div>
 			</div>
+			{_notificationState && <NotificationAlert type='success' message='Success!' />}
 		</>
 	)
 }

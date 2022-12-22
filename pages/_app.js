@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
     use();
   }, []);
   return (
-  <Provider store={store}>
+  <Provider store={store} className='bg-black'>
     <div className='flex flex-col min-h-screen md:flex-row'>
       <div>
         <NavBar/>

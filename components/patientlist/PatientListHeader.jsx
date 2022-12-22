@@ -7,18 +7,18 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import NavBar from '../NavBar'
 const patients = [
 	{
-		icon: <FiUsers className='p-2 rounded-full bg-cyan-100' size={'2em'} />,
+		icon: <FiUsers className='hidden p-2 rounded-full bg-cyan-100 md:flex' size={'2em'} />,
 		title: 'Total Admitted',
 		text: '2000',
 	},
 	{
-		icon: <FiCheckSquare className='p-2 bg-green-100 rounded-full' size={'2em'} />,
+		icon: <FiCheckSquare className='hidden p-2 bg-green-100 rounded-full md:flex' size={'2em'} />,
 		title: 'Active Patients',
 		text: '300',
 	},
 	,
 	{
-		icon: <FiWifi className='p-2 bg-pink-100 rounded-full' size={'2em'} />,
+		icon: <FiWifi className='hidden p-2 bg-pink-100 rounded-full md:flex' size={'2em'} />,
 		title: 'Online Devices',
 		text: '175',
 	},
@@ -75,14 +75,11 @@ const PatientListHeader = () => {
 
 	return (
 		<>
-			<header className='flex items-center justify-between p-3 shadow-md md:bg-white bg-cyan-900'>
-				<button className='flex md:hidden' onClick={() => setHamburgerOpen(true)}>
-					<GiHamburgerMenu className='text-white' />
-				</button>
+			<header className='flex flex-col items-center justify-between gap-4 p-3 bg-transparent shadow-md md:flex-row md:bg-white'>
 				<label htmlFor='table-search' className='sr-only'>
 					Search
 				</label>
-				<div className='relative'>
+				<div className='relative w-full md:w-auto '>
 					<div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
 						<svg
 							className='w-5 h-5 text-gray-500 dark:text-gray-400'
@@ -101,11 +98,11 @@ const PatientListHeader = () => {
 					<input
 						type='text'
 						id='table-search'
-						className='block w-full p-2 pl-10 text-sm text-gray-900 bg-gray-200 border-none rounded-lg shadow-sm lg:w-80 focus:ring-gray-500 focus:border-gray-500 font-Karla-Regular'
+						className='block w-full p-2 pl-10 text-sm text-gray-900 bg-white border-none rounded-lg shadow-sm md:bg-gray-200 lg:w-80 focus:ring-gray-500 focus:border-gray-500 font-Karla-Regular'
 						placeholder='Search for patient'
 					/>
 				</div>
-				<div className='flex-row justify-end hidden gap-6 md:flex'>
+				<div className='flex flex-row justify-end w-full gap-3'>
 					<OrganisationStats />
 					<button
 						type='button'
@@ -116,28 +113,9 @@ const PatientListHeader = () => {
 						<AiOutlinePlus size={20} />
 						Onboard
 					</button>
-					<button
-						className='flex items-center'
-						data-bs-toggle='collapse'
-						href='#collapseExample'
-						role='button'
-						aria-expanded='false'
-						aria-controls='collapseExample'
-					>
-						<img
-							src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
-							className='w-12 rounded-full shadow-lg '
-							alt='Avatar'
-						/>
-						<BiCaretDown className='text-white md:text-black' />
-					</button>
 				</div>
-
 				<Onboard showModal={showModal} setShowModal={setShowModal} />
 			</header>
-
-			{hamburgerOpen ? <NavBar hamburgerOpen={hamburgerOpen} setHamburgerOpen={setHamburgerOpen} /> : <></>}
-			<OrganisationInfo />
 		</>
 	)
 }

@@ -81,7 +81,7 @@ const Prescription = (props) => {
 					onClick={() => setIsOpen(true)}
 					className='flex p-2 m-2 text-xs text-white transition duration-150 ease-in-out rounded-lg bg-cyan-700 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
 					data-bs-toggle='modal'
-					data-bs-target='#exampleModalCenteredScrollable'
+					data-bs-target='#exampleModalCenteredScrollables'
 				>
 					PRESCRIBE MEDICATION
 				</button>
@@ -122,9 +122,9 @@ const AddMedicationModal = (props) => {
 	return (
 		<div
 			className='fixed top-0 left-0 hidden w-full h-full overflow-x-hidden overflow-y-auto outline-none modal fade'
-			id='exampleModalCenteredScrollable'
+			id='prescribeMedicationModal'
 			tabIndex='-1'
-			aria-labelledby='exampleModalCenteredScrollable'
+			aria-labelledby='prescribeMedicationModal'
 			aria-modal='true'
 			role='dialog'
 		>
@@ -140,19 +140,5 @@ const AddMedicationModal = (props) => {
 		</div>
 	)
 }
-
-/* 		;<Dialog
-			className='fixed top-0 bottom-0 left-0 right-0 m-auto bg-black/50'
-			open={isOpen}
-			onClose={() => setIsOpen(false)}
-		>
-			<div className='flex flex-col items-end h-[100vh]'>
-				<Dialog.Panel className='bg-white rounded-lg shadow-lg w-[50vw] m-7 p-5 h-auto overflow-auto'>
-					<Overview setIsOpen={setIsOpen} />
-					<VitalsSummary />
-					<Medication />
-				</Dialog.Panel>
-			</div>
-		</Dialog> */
 
 export default AddMedicationModal

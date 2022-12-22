@@ -89,7 +89,7 @@ const ActionsModal = () => {
 
 const Table = () => {
 	return (
-		<div className='flex flex-col w-full overflow-y-scroll p-7'>
+		<div className='flex flex-col w-full p-7 md:max-w-screen-xl'>
 			<div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row md:items-start lg:items-center '></div>
 			<div className='relative w-full overflow-x-auto rounded-md shadow-md'>
 				<table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
@@ -820,8 +820,11 @@ const Table = () => {
 
 const PatientList = () => {
 	return (
-		<div className='flex flex-col w-full max-h-screen'>
-			<Table />
+		<div className='flex flex-col w-full'>
+			<PatientListHeader />
+			<div className='flex w-full xl:justify-center'>
+				<Table />
+			</div>
 		</div>
 	)
 }

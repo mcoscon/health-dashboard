@@ -12,7 +12,7 @@ const NavBar = (props) => {
 		? `shadow-md bg-cyan-900 w-60 h-full flex-col md:flex shadow-md ${
 				hamburgerOpen ? 'md:hidden fixed h-full z-50 top-0' : 'hidden top-0'
 		  }`
-		: `shadow-md bg-cyan-900 w-60 h-full flex-col hidden md:flex shadow-md top-0`
+		: `shadow-md bg-cyan-900 w-full h-full flex-col hidden md:flex shadow-md top-0`
 
 	return (
 		<>
@@ -44,7 +44,7 @@ const NavBar = (props) => {
 							Management
 						</a>
 					</Link>
-					<Link href='/pharmacy' className='relative'>
+					<Link href='/prescriptions/' className='relative'>
 						<a
 							className='flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm text-white transition duration-300 ease-in-out rounded-lg text-ellipsis whitespace-nowrap hover:text-cyan-600 hover:bg-white font-Karla-Bold'
 							data-mdb-ripple='true'
@@ -53,7 +53,7 @@ const NavBar = (props) => {
 							Prescriptions
 						</a>
 					</Link>
-					<Link href='/patientlist' className='relative'>
+					<Link href='/chats' className='relative'>
 						<a
 							className='flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm text-white transition duration-300 ease-in-out rounded-lg cursor-pointer text-ellipsis whitespace-nowrap hover:text-cyan-600 hover:bg-white font-Karla-Bold'
 							data-mdb-ripple='true'

@@ -4,8 +4,8 @@ const initialState = {
 	value: false,
 }
 
-export const modalStateSlice = createSlice({
-	name: 'modalState',
+export const notificationStateSlice = createSlice({
+	name: 'notificationState',
 	initialState,
 	reducers: {
 		setVisibleTrue: (state) => {
@@ -24,6 +24,6 @@ export const modalStateSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setVisibleTrue, setVisibleFalse } = modalStateSlice.actions
+export const { setVisibleTrue, setVisibleFalse } = notificationStateSlice.actions
 
-export default modalStateSlice.reducer
+export default notificationStateSlice.reducer
