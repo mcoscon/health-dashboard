@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiFillDelete, AiFillEdit } from 'react-icons/ai'
-import NotificationAlert, { Success } from '../ui-components/NotificationAlert'
 import OtherActionsMedicationModal from './OtherActionsMedicationModal'
 
 const NotesDrawer = () => {
+	const [type, setType] = useState('')
 	return (
 		<>
 			<button
@@ -72,19 +72,19 @@ const NotesDrawer = () => {
 												<td className='flex flex-row gap-4 px-6 py-4 text-xs font-light text-gray-900'>
 													<button
 														type='button'
-														/* 							onClick={() => setIsOpen(true)} */
-														className='flex flex-row items-center justify-center p-2 text-xs transition duration-150 ease-in-out bg-white rounded-lg rounded-full text-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
+														className='flex flex-row items-center justify-center p-2 text-xs transition duration-150 ease-in-out bg-white rounded-full text-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
 														data-bs-toggle='modal'
 														data-bs-target='#otherActionsMedicationModal'
+														onClick={() => setType('edit')}
 													>
 														<AiFillEdit size={'1.2em'} />
 													</button>
 													<button
 														type='button'
-														/* 							onClick={() => setIsOpen(true)} */
-														className='flex flex-row items-center justify-center p-2 text-xs text-red-600 transition duration-150 ease-in-out bg-white rounded-lg rounded-full shadow-btnShadow font-Karla-Heavy hover:bg-red-600 hover:text-white active:shadow-lg'
+														className='flex flex-row items-center justify-center p-2 text-xs text-red-600 transition duration-150 ease-in-out bg-white rounded-full shadow-btnShadow font-Karla-Heavy hover:bg-red-600 hover:text-white active:shadow-lg'
 														data-bs-toggle='modal'
 														data-bs-target='#otherActionsMedicationModal'
+														onClick={() => setType('delete')}
 													>
 														<AiFillDelete size={'1.2em'} />
 													</button>
@@ -100,8 +100,8 @@ const NotesDrawer = () => {
 												<td className='flex flex-row gap-4 px-6 py-4 text-xs font-light text-gray-900'>
 													<button
 														type='button'
-														/* 							onClick={() => setIsOpen(true)} */
-														className='flex flex-row items-center justify-center p-2 text-xs transition duration-150 ease-in-out bg-white rounded-lg rounded-full text-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
+														onClick={() => setType('edit')}
+														className='flex flex-row items-center justify-center p-2 text-xs transition duration-150 ease-in-out bg-white rounded-full text-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
 														data-bs-toggle='modal'
 														data-bs-target='#otherActionsMedicationModal'
 													>
@@ -109,10 +109,11 @@ const NotesDrawer = () => {
 													</button>
 													<button
 														type='button'
-														/* 							onClick={() => setIsOpen(true)} */
-														className='flex flex-row items-center justify-center p-2 text-xs text-red-600 transition duration-150 ease-in-out bg-white rounded-lg rounded-full shadow-btnShadow font-Karla-Heavy hover:bg-red-600 hover:text-white active:shadow-lg'
+														onClick={() => setType('delete')}
+														className='flex flex-row items-center justify-center p-2 text-xs text-red-600 transition duration-150 ease-in-out bg-white rounded-full shadow-btnShadow font-Karla-Heavy hover:bg-red-600 hover:text-white active:shadow-lg'
 														data-bs-toggle='modal'
 														data-bs-target='#otherActionsMedicationModal'
+														onClick={() => setType('delete')}
 													>
 														<AiFillDelete size={'1.2em'} />
 													</button>
@@ -128,8 +129,8 @@ const NotesDrawer = () => {
 												<td className='flex flex-row gap-4 px-6 py-4 text-xs font-light text-gray-900'>
 													<button
 														type='button'
-														/* 							onClick={() => setIsOpen(true)} */
-														className='flex flex-row items-center justify-center p-2 text-xs transition duration-150 ease-in-out bg-white rounded-lg rounded-full text-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
+														onClick={() => setType('edit')}
+														className='flex flex-row items-center justify-center p-2 text-xs transition duration-150 ease-in-out bg-white rounded-full text-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
 														data-bs-toggle='modal'
 														data-bs-target='#otherActionsMedicationModal'
 													>
@@ -137,8 +138,8 @@ const NotesDrawer = () => {
 													</button>
 													<button
 														type='button'
-														/* 							onClick={() => setIsOpen(true)} */
-														className='flex flex-row items-center justify-center p-2 text-xs text-red-600 transition duration-150 ease-in-out bg-white rounded-lg rounded-full shadow-btnShadow font-Karla-Heavy hover:bg-red-600 hover:text-white active:shadow-lg'
+														onClick={() => setType('delete')}
+														className='flex flex-row items-center justify-center p-2 text-xs text-red-600 transition duration-150 ease-in-out bg-white rounded-full shadow-btnShadow font-Karla-Heavy hover:bg-red-600 hover:text-white active:shadow-lg'
 														data-bs-toggle='modal'
 														data-bs-target='#otherActionsMedicationModal'
 													>
@@ -154,8 +155,8 @@ const NotesDrawer = () => {
 					</div>
 				</div>
 			</div>
-			<OtherActionsMedicationModal />
-			{/* 	<NotificationAlert type='success' /> */}
+
+			<OtherActionsMedicationModal type={type} />
 		</>
 	)
 }

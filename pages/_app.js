@@ -1,9 +1,11 @@
 import NavBar from '../components/NavBar'
 import '../styles/globals.css'
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import {store} from '../store/store.jsx'
 import React, {useEffect} from 'react'
+import NotificationAlert from '../components/ui-components/NotificationAlert';
 function MyApp({ Component, pageProps }) {
+ 
   useEffect(() => {
     const use = async () => {
       (await import('tw-elements')).default;
@@ -18,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       </div>
       <Component {...pageProps} />
     </div>
+   
   </Provider>
   )
 }

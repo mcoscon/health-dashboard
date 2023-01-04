@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import { BiMessageRoundedError, BiZoomIn, BiPhoneOutgoing } from 'react-icons/bi'
 import MoreInfoModal from './MoreInfoModal'
@@ -11,9 +12,11 @@ const PatientCompliance = () => {
 						<h3 className='mb-5 text-cyan-600'>DAYS SKIPPED PAST 30 DAYS</h3>
 					</div>
 					<div>
-						<button className='flex flex-row items-center justify-center gap-2 p-2 text-xs text-white rounded-full bg-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-white hover:text-cyan-600 '>
-							<BiPhoneOutgoing size={20} />
-						</button>
+						<Link href='/chats'>
+							<a className='flex flex-row items-center justify-center gap-2 p-2 text-xs text-white rounded-full bg-cyan-600 shadow-btnShadow font-Karla-Heavy hover:bg-white hover:text-cyan-600'>
+								<BiPhoneOutgoing size={20} />
+							</a>
+						</Link>
 					</div>
 				</div>
 				<div className='flex flex-col-reverse justify-between sm:flex-row gap-7'>

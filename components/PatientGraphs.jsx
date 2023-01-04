@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { render } from 'react-dom'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { Tab } from '@headlessui/react'
-import { AiFillCaretDown } from 'react-icons/ai'
-import { RiContactsBookLine } from 'react-icons/ri'
-import DatePicker from './DatePicker'
+import { AiFillCaretDown, AiFillCaretRight } from 'react-icons/ai'
+import { RiHeartPulseLine, RiLungsLine, RiStackLine } from 'react-icons/ri'
 import { BiRefresh } from 'react-icons/bi'
+import { GiCycle, GiHalfHeart } from 'react-icons/gi'
+import { randomize, shift, useInterval } from './utilFunctions'
 
 const colors = [
 	{ key: 'SPO2', color: '#14b8a6' },
@@ -19,7 +19,76 @@ const colors = [
 	{ key: 'DUTY CYCLE', color: '#f43f5e' },
 ]
 
-const ChartsWrapper = (props) => {
+const MiniCharts = (props) => {
+	const { key, color, data } = props
+	const options = {
+		chart: {
+			type: 'area',
+			height: 100,
+			backgroundColor: 'transparent',
+		},
+
+		plotOptions: {
+			series: {
+				color: color,
+				fillOpacity: 0.12,
+			},
+		},
+		title: {
+			text: '',
+		},
+		xAxis: {
+			labels: {
+				enabled: false,
+			},
+			gridLineWidth: 0,
+			gridLineColor: 'rgba(97, 110, 178, 0.2)',
+			title: {
+				enabled: false,
+				text: '',
+				style: {
+					fontWeight: 'normal',
+				},
+			},
+		},
+		yAxis: {
+			labels: {
+				enabled: false,
+			},
+			gridLineWidth: 0,
+			gridLineColor: 'rgba(97, 110, 178, 0.2)',
+			title: {
+				enabled: false,
+				text: '',
+				style: {
+					fontWeight: 'normal',
+				},
+			},
+		},
+		series: [
+			{
+				data: data,
+			},
+		],
+		legend: {
+			enabled: false,
+		},
+		credits: {
+			enabled: false,
+		},
+	}
+	return (
+		<div>
+			<HighchartsReact
+				containerProps={{ style: { height: '100%', width: '100%', overFlow: 'hidden' } }}
+				highcharts={Highcharts}
+				options={options}
+			/>
+		</div>
+	)
+}
+
+const MainCharts = (props) => {
 	const { key, color } = props
 	const options = {
 		chart: {
@@ -82,6 +151,69 @@ const ChartsWrapper = (props) => {
 	)
 }
 
+const LiveSpot = () => {
+	const [data, setData] = useState([29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4])
+
+	const livespotData = [
+		{
+			icon: <RiLungsLine className='p-2 rounded-full text-white bg-[#f59e0b] sm:flex' size={'2em'} />,
+			title: 'Resp Rate',
+			color: '#f59e0b',
+		},
+		{
+			icon: <RiHeartPulseLine className='p-2 bg-[#06b6d4] text-white rounded-full sm:flex' size={'2em'} />,
+			title: 'Heart Rate',
+			color: '#06b6d4',
+		},
+		,
+		{
+			icon: <GiCycle className='p-2 bg-[#f43f5e] text-white rounded-full sm:flex' size={'2em'} />,
+			title: 'Duty Cycle',
+			text: '175',
+			color: '#f43f5e',
+		},
+		{
+			icon: <GiHalfHeart className='p-2 rounded-full text-white bg-[#14b8a6] sm:flex' size={'2em'} />,
+			title: 'SPO2 Level',
+			color: '#14b8a6',
+		},
+		{
+			icon: <RiStackLine className='p-2 rounded-full text-white bg-[#a855f7] sm:flex' size={'2em'} />,
+			title: 'Tidal Depth',
+			color: '#a855f7',
+		},
+	]
+	useInterval(() => {
+		const _data = randomize(data)
+		setData(_data)
+	}, 2000)
+
+	return (
+		<div className='flex flex-wrap justify-center gap-8 md:justify-start'>
+			{livespotData.map((_livespotData, index) => (
+				<div className='flex flex-col gap-4 p-4 bg-white rounded-lg shadow-lg' key={index}>
+					<div className='flex gap-8'>
+						{_livespotData.icon}
+						<div>
+							<h5 className='text-sm font-bold text-gray-400 uppercase'>{_livespotData.title}</h5>
+							<h1 className='text-2xl text-cyan-700'>{data[8]}</h1>
+						</div>
+					</div>
+					<MiniCharts color={_livespotData.color} data={data} />
+					<div className='flex items-center justify-between gap-8 '>
+						<h5 className='text-xs font-bold text-gray-400'>{'1 minute ago'}</h5>
+
+						<div className='flex flex-row items-center justify-center text-xs font-bold transition duration-150 ease-in-out bg-white text-cyan-600 '>
+							DETAILS
+							<AiFillCaretRight />
+						</div>
+					</div>
+				</div>
+			))}
+		</div>
+	)
+}
+
 const PatientGraphs = () => {
 	return (
 		<div className='p-4 w-[85vw] sm:w-[65vw] md:w-[50vw] flex flex-col '>
@@ -135,7 +267,7 @@ const PatientGraphs = () => {
 											<AiFillCaretDown />
 											{graph.key}
 										</h3>
-										<ChartsWrapper key={graph.key} color={graph.color} />
+										<MainCharts key={graph.key} color={graph.color} />
 									</div>
 								)
 							})}
@@ -150,11 +282,14 @@ const PatientGraphs = () => {
 											<AiFillCaretDown />
 											{graph.key}
 										</h3>
-										<ChartsWrapper key={graph.key} color={graph.color} />
+										<MainCharts key={graph.key} color={graph.color} />
 									</div>
 								)
 							})}
 						</div>
+					</Tab.Panel>
+					<Tab.Panel>
+						<LiveSpot />
 					</Tab.Panel>
 				</Tab.Panels>
 			</Tab.Group>
@@ -163,34 +298,3 @@ const PatientGraphs = () => {
 }
 
 export default PatientGraphs
-
-// <div className='tab-content' id='tabs-tabContent'>
-// 			<div
-// 				className='tab-pane fade show active'
-// 				id='tabs-home'
-// 				role='tabpanel'
-// 				aria-labelledby='tabs-home-tab'
-// 				show
-// 				active
-// 			>
-// 				<PatientMedication />
-// 			</div>
-// 			<div className='tab-pane fade' id='tabs-profile' role='tabpanel' aria-labelledby='tabs-profile-tab'>
-// 				<div className='flex items-center px-4 py-2 text-xs font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer gap-7 align-center w-max active:bg-gray-300 ease rounded-2xl'>
-// 					<div>
-// 						<img
-// 							src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
-// 							className='w-12 rounded-full shadow-lg'
-// 							alt='Avatar'
-// 						/>
-// 					</div>
-// 					<div>
-// 						<h4 className='text-sm text-black'>Alex Wachinsky</h4>
-// 						<h4>Start Date: 02/04/22</h4>
-// 						<h4>End Date: 02/04/22</h4>
-// 						<h4>Diagnosis: Asthma</h4>
-// 					</div>
-// 					<FiArrowUpRight className='flex self-start' size={'1rem'} />
-// 				</div>
-// 			</div>
-// 		</div>

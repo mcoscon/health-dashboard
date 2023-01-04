@@ -2,30 +2,34 @@ import { Tab } from '@headlessui/react'
 import React, { useState } from 'react'
 import { AiOutlineCloseCircle, AiOutlinePlus, AiOutlineUpload } from 'react-icons/ai'
 import GenericModal from '../GenericModal'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setVisibleFalse, setVisibleTrue } from '../../store/notificationSlice'
 import { RadioGroup } from '@headlessui/react'
 import { useForm } from 'react-hook-form'
 import DatePicker from '../DatePicker'
 import { FiSettings } from 'react-icons/fi'
-
+import OtherActionsMedicationModal from '../prescription/OtherActionsMedicationModal'
+import NotificationAlert from '../ui-components/NotificationAlert'
+const _ = require('lodash')
 const OnboardSignUp = () => {
 	const [selectedIndex, setSelectedIndex] = useState(0)
-
+	const dispatch = useDispatch()
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		getValues,
 	} = useForm()
 
 	const onSubmit = (data) => {
 		setTabIndex(1)
+
+		dispatch(setVisibleTrue())
 	}
 	const setTabIndex = (_index) => {
 		setSelectedIndex(_index)
 	}
-	const dispatch = useDispatch()
-	console.log(errors)
+
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
 			<div className='flex flex-row items-center justify-between'>
@@ -47,7 +51,6 @@ const OnboardSignUp = () => {
 					</Tab>
 					<div>{'>'}</div>
 					<Tab
-						/* 	disabled={Object.keys(errors).length !== 0} */
 						className={({ selected }) =>
 							selected
 								? 'focus:outline-0 outline-0 flex flex-row text-cyan-600'
@@ -67,30 +70,33 @@ const OnboardSignUp = () => {
 }
 
 const Onboard = (props) => {
-	const dispatch = useDispatch()
 	return (
-		<div
-			className='fixed top-0 left-0 hidden w-full h-full overflow-x-hidden overflow-y-auto outline-none modal fade'
-			id='onboardModal'
-			tabIndex='-1'
-			aria-labelledby='onboardModal'
-			aria-modal='true'
-			role='dialog'
-		>
-			<div className='relative pointer-events-none min-w-fit w-96 modal-dialog modal-dialog-centered modal-dialog-scrollable'>
-				<div className='relative flex flex-col w-full text-current bg-white border-none rounded-md shadow-lg outline-none pointer-events-auto modal-content bg-clip-padding'>
-					<div className='relative p-4 modal-body'>
-						<OnboardSignUp />
+		<>
+			<div
+				className='fixed top-0 left-0 hidden w-full h-full overflow-x-hidden overflow-y-auto outline-none modal fade'
+				id='onboardModal'
+				tabIndex='-1'
+				aria-labelledby='onboardModal'
+				aria-modal='true'
+				role='dialog'
+			>
+				<div className='relative pointer-events-none min-w-fit w-96 modal-dialog modal-dialog-centered modal-dialog-scrollable'>
+					<div className='relative flex flex-col w-full text-current bg-white border-none rounded-md shadow-lg outline-none pointer-events-auto modal-content bg-clip-padding'>
+						<div className='relative p-4 modal-body'>
+							<OnboardSignUp />
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<NotificationAlert type='success' message='Success' />
+		</>
 	)
 }
 
 const SensorDeviceTab = (props) => {
 	const { register, errors, setTabIndex } = props
 	const [selected, setSelected] = useState(0)
+
 	return (
 		<Tab.Panel>
 			<div className='grid grid-cols-2 gap-5 mb-5'>
@@ -99,7 +105,7 @@ const SensorDeviceTab = (props) => {
 					<input
 						className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 						type='text'
-						{...register('sensorName', { required: true })}
+						{...register('sensorName', { required: false })}
 					/>
 					{errors?.sensorName && <h4 className='text-xs text-red-500'>Sensor Name is Required</h4>}
 				</div>
@@ -108,7 +114,7 @@ const SensorDeviceTab = (props) => {
 					<input
 						className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 						type='text'
-						{...register('macAddress', { required: true, length: 12 })}
+						{...register('macAddress', { required: false, length: 12 })}
 					/>
 					{errors?.macAddress && <h4 className='text-xs text-red-500'>Sensor Mac Address is Required</h4>}
 				</div>
@@ -118,7 +124,7 @@ const SensorDeviceTab = (props) => {
 			{/* 					<input
 						className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 						type='text'
-						{...register('sensorName', { required: true })}
+						{...register('sensorName', { required: false })}
 					/>
 					{errors?.sensorName && <h4 className='text-xs text-red-500'>Sensor Name is Required</h4>} */}
 			<RadioGroup value={selected} onChange={setSelected} className='grid grid-cols-3 gap-5 mb-5'>
@@ -168,10 +174,11 @@ const SensorDeviceTab = (props) => {
 					Back
 				</button>
 				<button
-					/* 		onClick={() => setTabIndex(1)} */
-					/* 	type='submit' */
-					/* 		onClick={() => setShowModal(true)} */
-					className='bg-cyan-600 text-sm text-white rounded-lg shadow-btnShadow p-2 font-Karla-Heavy min-w-[6em]'
+					disabled={Object.entries(errors).length > 0}
+					data-bs-toggle='modal'
+					data-bs-target='#onboardModal'
+					type='submit'
+					className='bg-cyan-600 text-sm text-white rounded-lg shadow-btnShadow p-2 font-Karla-Heavy min-w-[6em] disabled:bg-gray-600'
 				>
 					Submit
 				</button>
@@ -191,7 +198,7 @@ const PatientInfoTab = (props) => {
 						<input
 							className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 							type='text'
-							{...register('lastName', { required: true })}
+							{...register('lastName', { required: false })}
 						/>
 						{errors?.lastName && <h4 className='text-xs text-red-500'>Last Name is Required</h4>}
 					</div>
@@ -202,7 +209,7 @@ const PatientInfoTab = (props) => {
 							className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 							type='text'
 							name='firstName'
-							{...register('firstName', { required: true })}
+							{...register('firstName', { required: false })}
 						/>
 						{errors?.firstName && <h4 className='text-xs text-red-500'>First Name is Required</h4>}
 					</div>
@@ -225,7 +232,7 @@ const PatientInfoTab = (props) => {
 						<input
 							className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 							type='number'
-							{...register('age', { required: true })}
+							{...register('age', { required: false })}
 						/>
 						{errors?.age && <h4 className='text-xs text-red-500'>Age is Required</h4>}
 					</div>
@@ -238,7 +245,7 @@ const PatientInfoTab = (props) => {
 								className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 								placeholder='Select a date'
 								data-mdb-toggle='datepicker'
-								{...register('dateOfBirth', { required: true })}
+								{...register('dateOfBirth', { required: false })}
 							/>
 							{errors?.dateOfBirth && <h4 className='text-xs text-red-500'>Date of Birth is Required</h4>}
 						</div>
@@ -250,7 +257,7 @@ const PatientInfoTab = (props) => {
 						<input
 							className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 							type='text'
-							{...register('diagnosis', { required: true })}
+							{...register('diagnosis', { required: false })}
 						/>
 						{errors?.diagnosis && <h4 className='text-xs text-red-500'>Diagnosis is Required</h4>}
 					</div>
@@ -263,7 +270,7 @@ const PatientInfoTab = (props) => {
 								className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 								placeholder='Select a date'
 								data-mdb-toggle='datepicker'
-								{...register('onboardDate', { required: true })}
+								{...register('onboardDate', { required: false })}
 							/>
 							{errors?.onboardDate && <h4 className='text-xs text-red-500'>Onboard Date is Required</h4>}
 						</div>
@@ -276,7 +283,7 @@ const PatientInfoTab = (props) => {
 								className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 								placeholder='Select a date'
 								data-mdb-toggle='datepicker'
-								{...register('expectedEndDate', { required: true })}
+								{...register('expectedEndDate', { required: false })}
 							/>
 							{errors?.expectedEndDate && (
 								<h4 className='text-xs text-red-500'>Expected End Date is Required</h4>
@@ -291,7 +298,7 @@ const PatientInfoTab = (props) => {
 							className='p-1 text-sm text-gray-500 border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 							type='email'
 							name='email'
-							{...register('email', { required: true, pattern: /^\S+@\S+$/i })}
+							{...register('email', { required: false, pattern: /^\S+@\S+$/i })}
 						/>
 						{errors?.email?.type === 'pattern' ? (
 							<h4 className='text-xs text-red-500'>Invalid Email</h4>
@@ -307,7 +314,7 @@ const PatientInfoTab = (props) => {
 							className='p-1 text-sm text-gray-500 bg-transparent border rounded-md border-slate-200 focus:outline-slate-300 font-Karla-Heavy'
 							type='text'
 							name='contactNumber'
-							{...register('contactNumber', { required: true, pattern: rePhoneNumber })}
+							{...register('contactNumber', { required: false, pattern: rePhoneNumber })}
 						/>
 						{errors?.contactNumber?.type === 'pattern' ? (
 							<h4 className='text-xs text-red-500'>Invalid Contact Number</h4>
@@ -337,9 +344,10 @@ const PatientInfoTab = (props) => {
 				</button>
 				<button
 					type='submit'
+					onClick={() => setTabIndex(1)}
 					className='bg-cyan-600 text-sm text-white rounded-lg shadow-btnShadow p-2 font-Karla-Heavy min-w-[6em]'
 				>
-					Submit
+					Next
 				</button>
 			</div>
 		</Tab.Panel>
@@ -347,112 +355,3 @@ const PatientInfoTab = (props) => {
 }
 
 export default Onboard
-/* 
-import { useState } from 'react'
-import { RadioGroup } from '@headlessui/react'
-
-const plans = [
-	{
-		name: 'Startup',
-		ram: '12GB',
-		cpus: '6 CPUs',
-		disk: '160 GB SSD disk',
-	},
-	{
-		name: 'Business',
-		ram: '16GB',
-		cpus: '8 CPUs',
-		disk: '512 GB SSD disk',
-	},
-	{
-		name: 'Enterprise',
-		ram: '32GB',
-		cpus: '12 CPUs',
-		disk: '1024 GB SSD disk',
-	},
-]
- */
-/* export default function Example() {
-  const [selected, setSelected] = useState(plans[0])
-
-  return (
-    <div className="w-full px-4 py-16">
-      <div className="w-full max-w-md mx-auto">
-        <RadioGroup value={selected} onChange={setSelected}>
-          <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
-          <div className="space-y-2">
-            {plans.map((plan) => (
-              <RadioGroup.Option
-                key={plan.name}
-                value={plan}
-                className={({ active, checked }) =>
-                  `${
-                    active
-                      ? 'ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-sky-300'
-                      : ''
-                  }
-                  ${
-                    checked ? 'bg-sky-900 bg-opacity-75 text-white' : 'bg-white'
-                  }
-                    relative flex cursor-pointer rounded-lg px-5 py-4 shadow-md focus:outline-none`
-                }
-              >
-                {({ active, checked }) => (
-                  <>
-                    <div className="flex items-center justify-between w-full">
-                      <div className="flex items-center">
-                        <div className="text-sm">
-                          <RadioGroup.Label
-                            as="p"
-                            className={`font-medium  ${
-                              checked ? 'text-white' : 'text-gray-900'
-                            }`}
-                          >
-                            {plan.name}
-                          </RadioGroup.Label>
-                          <RadioGroup.Description
-                            as="span"
-                            className={`inline ${
-                              checked ? 'text-sky-100' : 'text-gray-500'
-                            }`}
-                          >
-                            <span>
-                              {plan.ram}/{plan.cpus}
-                            </span>{' '}
-                            <span aria-hidden="true">&middot;</span>{' '}
-                            <span>{plan.disk}</span>
-                          </RadioGroup.Description>
-                        </div>
-                      </div>
-                      {checked && (
-                        <div className="text-white shrink-0">
-                          <CheckIcon className="w-6 h-6" />
-                        </div>
-                      )}
-                    </div>
-                  </>
-                )}
-              </RadioGroup.Option>
-            ))}
-          </div>
-        </RadioGroup>
-      </div>
-    </div>
-  )
-}
-
-function CheckIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" {...props}>
-      <circle cx={12} cy={12} r={12} fill="#fff" opacity="0.2" />
-      <path
-        d="M7 13l3 3 7-7"
-        stroke="#fff"
-        strokeWidth={1.5}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
- */
