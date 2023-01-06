@@ -6,7 +6,6 @@ import NotesDrawer from './NotesDrawer'
 import NotificationAlert from '../ui-components/NotificationAlert'
 import { useDispatch, useSelector } from 'react-redux'
 import { setVisibleTrue } from '../../store/notificationSlice'
-import { Tooltip } from 'flowbite-react'
 import Link from 'next/link'
 
 const BasicPatientInfo = () => {

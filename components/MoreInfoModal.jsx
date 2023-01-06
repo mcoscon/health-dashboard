@@ -1,6 +1,248 @@
 import React from 'react'
+import { useState } from 'react'
+import { Dialog, Transition } from '@headlessui/react'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
+const Medication = () => {
+	return (
+		<>
+			<h3 className='mb-5 text-gray-500'>MEDICATION OVERVIEW</h3>
+			<div className='grid grid-cols-3 gap-5 p-2 '>
+				<h3 className='text-xs'>MEDICATION</h3>
+				<h3 className='text-xs'>AMOUNT PROVIDED</h3>
+				<h3 className='text-xs'>INTAKE PRESCRIPTION</h3>
+			</div>
+			{[0, 1, 2].map((med, index) => {
+				return (
+					<div key={index} className={'grid grid-cols-3 gap-5 p-2'}>
+						<h4 className='text-sm text-gray-500'>Meds A</h4>
+						<h4 className='text-sm text-gray-500'>2 bottles x 50 tablets</h4>
+						<h4 className='text-sm text-gray-500'>1 tablet each meal, 3x a day</h4>
+					</div>
+				)
+			})}
+		</>
+	)
+}
+const VitalsSummary = () => {
+	return (
+		<div className='mb-7'>
+			<h3 className='mb-5 text-gray-500'>VITALS SUMMARY</h3>
+			<div className='grid grid-cols-3 gap-5 p-2 '>
+				<h3 className='text-xs'>VITAL SIGN AVERAGE</h3>
+				<h3 className='text-xs'>PAST 30 DAYS</h3>
+				<h3 className='text-xs'>PAST 24H</h3>
+			</div>
+			{[0, 1, 2, 3, 4].map((vital, index) => {
+				return (
+					<div
+						key={index}
+						className={
+							index % 2 === 0
+								? 'bg-gray-200 grid grid-cols-3 gap-5 p-2'
+								: 'bg-white grid grid-cols-3 gap-5 p-2'
+						}
+					>
+						<h4 className='text-sm text-gray-500'>Heart Rate</h4>
+						<h4 className='text-sm text-gray-500'>50</h4>
+						<h4 className='text-sm text-gray-500'>50</h4>
+					</div>
+				)
+			})}
+		</div>
+	)
+}
 
-const MoreInfoModal = () => {
+const Table = () => {
+	return (
+		<div className='flex flex-col w-full'>
+			<div className='overflow-x-auto sm:-mx-6 lg:-mx-8'>
+				<div className='inline-block min-w-full py-2 sm:px-6 lg:px-8'>
+					<div className='overflow-hidden'>
+						<table className='min-w-full text-center'>
+							<thead>
+								<tr>
+									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+										#
+									</th>
+									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+										Date
+									</th>
+									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+										Sensor Input
+									</th>
+									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+										Breathing Input
+									</th>
+									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+										Symptoms Input
+									</th>
+									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+										Medication
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>1</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										Mark
+									</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										Otto
+									</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										@mdo
+									</td>
+								</tr>
+								<tr className='bg-white'>
+									<td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>2</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										Jacob
+									</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										Thornton
+									</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										@fat
+									</td>
+								</tr>
+								<tr className='bg-white'>
+									<td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>3</td>
+									<td
+										colSpan='2'
+										className='px-6 py-4 text-sm font-light text-center text-gray-900 whitespace-nowrap'
+									>
+										Larry the Bird
+									</td>
+									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+										@twitter
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+const Overview = (props) => {
+	const { setIsOpen } = props
+	return (
+		<>
+			<ul
+				className='flex flex-col flex-wrap pl-0 mb-4 list-none nav nav-pills md:flex-row'
+				id='pills-tab'
+				role='tablist'
+			>
+				<li className='nav-item' role='presentation'>
+					<a
+						href='#pills-home'
+						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mr-2 focus:outline-none focus:ring-0 active'
+						id='pills-home-tab'
+						data-bs-toggle='pill'
+						data-bs-target='#pills-home'
+						role='tab'
+						aria-controls='pills-home'
+						aria-selected='true'
+					>
+						PAST 30 DAYS
+					</a>
+				</li>
+				<li className='nav-item' role='presentation'>
+					<a
+						href='#pills-profile'
+						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0'
+						id='pills-profile-tab'
+						data-bs-toggle='pill'
+						data-bs-target='#pills-profile'
+						role='tab'
+						aria-controls='pills-profile'
+						aria-selected='false'
+					>
+						PAST 60 DAYS
+					</a>
+				</li>
+				<li className='nav-item' role='presentation'>
+					<a
+						href='#pills-contact'
+						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0'
+						id='pills-contact-tab'
+						data-bs-toggle='pill'
+						data-bs-target='#pills-contact'
+						role='tab'
+						aria-controls='pills-contact'
+						aria-selected='false'
+					>
+						PAST 90 DAYS
+					</a>
+				</li>
+				<li className='nav-item' role='presentation'>
+					<input
+						type='date'
+						/* 	href='#pills-contact' */
+						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded md:mx-2 nav-link focus:outline-none focus:ring-0 font-Karla-Regular'
+						/* 	id='pills-contact-tab'
+					data-bs-toggle='pill'
+					data-bs-target='#pills-contact'
+					role='tab'
+					aria-controls='pills-contact'
+					aria-selected='false' */
+						placeholder='Select a date'
+					></input>
+				</li>
+			</ul>
+			<div className='tab-content' id='pills-tabContent'>
+				<div
+					className='tab-pane fade show active'
+					id='pills-home'
+					role='tabpanel'
+					aria-labelledby='pills-home-tab'
+				>
+					<Table />
+				</div>
+				<div className='tab-pane fade' id='pills-profile' role='tabpanel' aria-labelledby='pills-profile-tab'>
+					Tab 2 content
+				</div>
+				<div className='tab-pane fade' id='pills-contact' role='tabpanel' aria-labelledby='pills-contact-tab'>
+					Tab 3 content
+				</div>
+			</div>
+			{/* 			<li className='nav-item' role='presentation'>
+				<a
+					href='#pills-home'
+					className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mr-2 focus:outline-none focus:ring-0 active'
+					id='pills-home-tab'
+					data-bs-toggle='pill'
+					data-bs-target='#pills-home'
+					role='tab'
+					aria-controls='pills-home'
+					aria-selected='true'
+				>
+					PAST 90 DAYS
+				</a>
+			</li> */}
+			{/* 	<li className='nav-item' role='presentation'>
+				<input
+					href='#pills-profileS'
+					id='pills-profile-tab'
+					data-bs-toggle='pill'
+					data-bs-target='#pills-profile'
+					role='tab'
+					aria-controls='pills-profile'
+					aria-selected='false'
+					type='date'
+					className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0 focus:text-white font-Karla-Regular'
+					placeholder='Select a date'
+				/>
+			</li> */}
+		</>
+	)
+}
+
+const MoreInfoModal = (props) => {
+	const { isOpen, setIsOpen } = props
 	return (
 		<div
 			className='fixed top-0 left-0 hidden w-full h-full overflow-x-hidden overflow-y-auto outline-none modal fade'
@@ -10,49 +252,42 @@ const MoreInfoModal = () => {
 			aria-modal='true'
 			role='dialog'
 		>
-			<div className='relative w-auto pointer-events-none modal-dialog modal-dialog-centered modal-dialog-scrollable'>
+			<div className='relative pointer-events-none min-w-fit modal-dialog modal-dialog-centered modal-dialog-scrollable'>
 				<div className='relative flex flex-col w-full text-current bg-white border-none rounded-md shadow-lg outline-none pointer-events-auto modal-content bg-clip-padding'>
-					<div className='flex items-center justify-between flex-shrink-0 p-4 border-b border-gray-200 modal-header rounded-t-md'>
-						<h5 className='text-xl font-medium leading-normal text-gray-800' id='moreInfoModalLabel'>
-							Modal title
-						</h5>
-						<button
-							type='button'
-							className='box-content w-4 h-4 p-1 text-black border-none rounded-none opacity-50 btn-close focus:shadow-none focus:outline-none focus:opacity-100 hover:text-black hover:opacity-75 hover:no-underline'
-							data-bs-dismiss='modal'
-							aria-label='Close'
-						></button>
-					</div>
 					<div className='relative p-4 modal-body'>
-						<p>
-							This is some placeholder content to show a vertically centered modal. Weve added some extra
-							copy here to show how vertically centering the modal works when combined with scrollable
-							modals. We also use some repeated line breaks to quickly extend the height of the content,
-							thereby triggering the scrolling. When content becomes longer than the predefined max-height
-							of modal, content will be cropped and scrollable within the modal.
-						</p>
-
-						<p>Just like that.</p>
-					</div>
-					<div className='flex flex-wrap items-center justify-end flex-shrink-0 p-4 border-t border-gray-200 modal-footer rounded-b-md'>
-						<button
-							type='button'
-							className='inline-block px-6 py-2.5 bg-purple-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-purple-800 active:shadow-lg transition duration-150 ease-in-out'
-							data-bs-dismiss='modal'
-						>
-							Close
-						</button>
-						<button
-							type='button'
-							className='inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out ml-1'
-						>
-							Save changes
-						</button>
+						<div className='flex flex-row items-center justify-between mb-5'>
+							<h3 className='text-gray-500'>COMPLIANCE HISTORY</h3>
+							<button
+								onClick={() => setIsOpen(false)}
+								data-bs-dismiss='modal'
+								aria-label='Close'
+								type='button'
+							>
+								<AiOutlineCloseCircle size={25} />
+							</button>
+						</div>
+						<Overview setIsOpen={setIsOpen} />
+						{/* 		<VitalsSummary />
+						<Medication /> */}
 					</div>
 				</div>
 			</div>
 		</div>
 	)
 }
+
+/* 		;<Dialog
+			className='fixed top-0 bottom-0 left-0 right-0 m-auto bg-black/50'
+			open={isOpen}
+			onClose={() => setIsOpen(false)}
+		>
+			<div className='flex flex-col items-end h-[100vh]'>
+				<Dialog.Panel className='bg-white rounded-lg shadow-lg w-[50vw] m-7 p-5 h-auto overflow-auto'>
+					<Overview setIsOpen={setIsOpen} />
+					<VitalsSummary />
+					<Medication />
+				</Dialog.Panel>
+			</div>
+		</Dialog> */
 
 export default MoreInfoModal

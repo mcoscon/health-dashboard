@@ -2,6 +2,7 @@ import React from 'react'
 import { BiBody, BiFile } from 'react-icons/bi'
 import { useState } from 'react'
 import DetailsModal from './DetailsModal'
+import Image from 'next/image'
 const PatientDetails = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	return (
@@ -45,7 +46,14 @@ const PatientDetails = () => {
 						</div>
 					</div>
 					<div className='flex flex-col items-center justify-center gap-5'>
-						<div className='w-[114px] h-[114px] bg-black'></div>
+						{/* <div className='w-[114px] h-[114px] bg-black'></div> */}
+						<Image
+							className='rounded-full'
+							src='/../public/images/patient.png'
+							alt='Profile Pic'
+							width='100px'
+							height='100px'
+						/>
 						<button
 							type='button'
 							onClick={() => setIsOpen(true)}

@@ -7,7 +7,6 @@ import styles from '../styles/Home.module.css'
 import Patient from './patient'
 
 export default function Home() {
-  const _notificationState = useSelector((state) => state.notificationState.value)
   return (
     <>
     <Patient/>

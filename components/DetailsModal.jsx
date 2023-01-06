@@ -13,13 +13,11 @@ const Medication = () => {
 			</div>
 			{[0, 1, 2].map((med, index) => {
 				return (
-					<>
-						<div className={'grid grid-cols-3 gap-5 p-2'}>
-							<h4 className='text-sm text-gray-500'>Meds A</h4>
-							<h4 className='text-sm text-gray-500'>2 bottles x 50 tablets</h4>
-							<h4 className='text-sm text-gray-500'>1 tablet each meal, 3x a day</h4>
-						</div>
-					</>
+					<div key={index} className={'grid grid-cols-3 gap-5 p-2'}>
+						<h4 className='text-sm text-gray-500'>Meds A</h4>
+						<h4 className='text-sm text-gray-500'>2 bottles x 50 tablets</h4>
+						<h4 className='text-sm text-gray-500'>1 tablet each meal, 3x a day</h4>
+					</div>
 				)
 			})}
 		</>
@@ -36,19 +34,18 @@ const VitalsSummary = () => {
 			</div>
 			{[0, 1, 2, 3, 4].map((vital, index) => {
 				return (
-					<>
-						<div
-							className={
-								index % 2 === 0
-									? 'bg-gray-200 grid grid-cols-3 gap-5 p-2'
-									: 'bg-white grid grid-cols-3 gap-5 p-2'
-							}
-						>
-							<h4 className='text-sm text-gray-500'>Heart Rate</h4>
-							<h4 className='text-sm text-gray-500'>50</h4>
-							<h4 className='text-sm text-gray-500'>50</h4>
-						</div>
-					</>
+					<div
+						key={index}
+						className={
+							index % 2 === 0
+								? 'bg-gray-200 grid grid-cols-3 gap-5 p-2'
+								: 'bg-white grid grid-cols-3 gap-5 p-2'
+						}
+					>
+						<h4 className='text-sm text-gray-500'>Heart Rate</h4>
+						<h4 className='text-sm text-gray-500'>50</h4>
+						<h4 className='text-sm text-gray-500'>50</h4>
+					</div>
 				)
 			})}
 		</div>

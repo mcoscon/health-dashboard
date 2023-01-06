@@ -3763,7 +3763,7 @@
     "react-icons" "^4.4.0"
     "react-indiana-drag-scroll" "^2.2.0"
 
-"flowbite@^1", "flowbite@^1.5.2":
+"flowbite@^1":
   "integrity" "sha512-oSKhPkg0bYb4dZG4ypSh++dPrFM3IOSER6HOwJHYRFPW5u9PXL4AQFMQh7Kytgws2xrDQyl/zqefZmymeWt2IA=="
   "resolved" "https://registry.npmjs.org/flowbite/-/flowbite-1.5.2.tgz"
   "version" "1.5.2"
@@ -7070,7 +7070,12 @@
   "resolved" "https://registry.npmjs.org/suspend-react/-/suspend-react-0.0.8.tgz"
   "version" "0.0.8"
 
-"tailwindcss@^3", "tailwindcss@^3.0.7", "tailwindcss@^3.1.8":
+"tailwind-scrollbar@^2.1.0":
+  "integrity" "sha512-zpvY5mDs0130YzYjZKBiDaw32rygxk5RyJ4KmeHjGnwkvbjm/PszON1m4Bbt2DkMRIXlXsfNevykAESgURN4KA=="
+  "resolved" "https://registry.npmjs.org/tailwind-scrollbar/-/tailwind-scrollbar-2.1.0.tgz"
+  "version" "2.1.0"
+
+"tailwindcss@^3", "tailwindcss@^3.0.7", "tailwindcss@^3.1.8", "tailwindcss@3.x":
   "integrity" "sha512-YSneUCZSFDYMwk+TGq8qYFdCA3yfBRdBlS7txSq0LUmzyeqRe3a8fBQzbz9M3WS/iFT4BNf/nmw9mEzrnSaC0g=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.1.8.tgz"
   "version" "3.1.8"
