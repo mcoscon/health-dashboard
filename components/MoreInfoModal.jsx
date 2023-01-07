@@ -59,65 +59,91 @@ const Table = () => {
 				<div className='inline-block min-w-full py-2 sm:px-6 lg:px-8'>
 					<div className='overflow-hidden'>
 						<table className='min-w-full text-center'>
-							<thead>
-								<tr>
-									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
-										#
-									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+							<thead className='border-b'>
+								<tr className='border-b'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
 										Date
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
 										Sensor Input
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
 										Breathing Input
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
 										Symptoms Input
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-medium text-gray-900'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
 										Medication
 									</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>1</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										Mark
-									</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										Otto
-									</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										@mdo
-									</td>
-								</tr>
-								<tr className='bg-white'>
-									<td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>2</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										Jacob
-									</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										Thornton
-									</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										@fat
-									</td>
-								</tr>
-								<tr className='bg-white'>
-									<td className='px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap'>3</td>
-									<td
-										colSpan='2'
-										className='px-6 py-4 text-sm font-light text-center text-gray-900 whitespace-nowrap'
-									>
-										Larry the Bird
-									</td>
-									<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-										@twitter
-									</td>
-								</tr>
+								{[0, 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((dataRow, index) => {
+									return (
+										<>
+											<tr className='border-b'>
+												<td className='px-6 py-4 text-sm font-medium text-gray-900 uppercase whitespace-nowrap'>
+													<div className='flex justify-center space-x-2'>
+														{/* <span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-yellow-500 text-white rounded-full '>
+												2/4 SCORE
+											</span> */}
+													</div>
+													<h4 className='text-xs font-medium text-gray-400'>
+														13th April 2016
+													</h4>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-500 text-white rounded-full '>
+														NOT COMPLETED
+													</span>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+														COMPLETED
+													</span>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+														COMPLETED
+													</span>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-500 text-white rounded-full '>
+														NOT COMPLETED
+													</span>
+												</td>
+											</tr>
+											<tr className='border-b'>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 uppercase whitespace-nowrap'>
+													<h4 className='text-xs font-medium text-gray-400'>
+														13th April 2016
+													</h4>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+														COMPLETED
+													</span>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+														COMPLETED
+													</span>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+														COMPLETED
+													</span>
+												</td>
+												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-500 text-white rounded-full '>
+														NOT COMPLETED
+													</span>
+												</td>
+											</tr>
+										</>
+									)
+								})}
 							</tbody>
 						</table>
 					</div>
@@ -132,14 +158,14 @@ const Overview = (props) => {
 	return (
 		<>
 			<ul
-				className='flex flex-col flex-wrap pl-0 mb-4 list-none nav nav-pills md:flex-row'
+				className='flex flex-col flex-wrap pl-0 list-none nav nav-pills md:flex-row'
 				id='pills-tab'
 				role='tablist'
 			>
 				<li className='nav-item' role='presentation'>
 					<a
 						href='#pills-home'
-						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mr-2 focus:outline-none focus:ring-0 active'
+						className='block p-2 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mr-2 focus:outline-none focus:ring-0 active'
 						id='pills-home-tab'
 						data-bs-toggle='pill'
 						data-bs-target='#pills-home'
@@ -153,7 +179,7 @@ const Overview = (props) => {
 				<li className='nav-item' role='presentation'>
 					<a
 						href='#pills-profile'
-						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0'
+						className='block p-2 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0'
 						id='pills-profile-tab'
 						data-bs-toggle='pill'
 						data-bs-target='#pills-profile'
@@ -167,7 +193,7 @@ const Overview = (props) => {
 				<li className='nav-item' role='presentation'>
 					<a
 						href='#pills-contact'
-						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0'
+						className='block p-2 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0'
 						id='pills-contact-tab'
 						data-bs-toggle='pill'
 						data-bs-target='#pills-contact'
@@ -182,7 +208,7 @@ const Overview = (props) => {
 					<input
 						type='date'
 						/* 	href='#pills-contact' */
-						className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded md:mx-2 nav-link focus:outline-none focus:ring-0 font-Karla-Regular'
+						className='block p-2 my-2 text-xs font-medium leading-tight uppercase rounded md:mx-2 nav-link focus:outline-none focus:ring-0 font-Karla-Regular'
 						/* 	id='pills-contact-tab'
 					data-bs-toggle='pill'
 					data-bs-target='#pills-contact'
@@ -203,40 +229,12 @@ const Overview = (props) => {
 					<Table />
 				</div>
 				<div className='tab-pane fade' id='pills-profile' role='tabpanel' aria-labelledby='pills-profile-tab'>
-					Tab 2 content
+					<Table />
 				</div>
 				<div className='tab-pane fade' id='pills-contact' role='tabpanel' aria-labelledby='pills-contact-tab'>
-					Tab 3 content
+					<Table />
 				</div>
 			</div>
-			{/* 			<li className='nav-item' role='presentation'>
-				<a
-					href='#pills-home'
-					className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mr-2 focus:outline-none focus:ring-0 active'
-					id='pills-home-tab'
-					data-bs-toggle='pill'
-					data-bs-target='#pills-home'
-					role='tab'
-					aria-controls='pills-home'
-					aria-selected='true'
-				>
-					PAST 90 DAYS
-				</a>
-			</li> */}
-			{/* 	<li className='nav-item' role='presentation'>
-				<input
-					href='#pills-profileS'
-					id='pills-profile-tab'
-					data-bs-toggle='pill'
-					data-bs-target='#pills-profile'
-					role='tab'
-					aria-controls='pills-profile'
-					aria-selected='false'
-					type='date'
-					className='block px-6 py-3 my-2 text-xs font-medium leading-tight uppercase rounded nav-link md:mx-2 focus:outline-none focus:ring-0 focus:text-white font-Karla-Regular'
-					placeholder='Select a date'
-				/>
-			</li> */}
 		</>
 	)
 }
@@ -256,9 +254,9 @@ const MoreInfoModal = (props) => {
 				<div className='relative flex flex-col w-full text-current bg-white border-none rounded-md shadow-lg outline-none pointer-events-auto modal-content bg-clip-padding'>
 					<div className='relative p-4 modal-body'>
 						<div className='flex flex-row items-center justify-between mb-5'>
-							<h3 className='text-gray-500'>COMPLIANCE HISTORY</h3>
+							<h3 className='text-gray-500'>PATIENT COMPLIANCE HISTORY</h3>
 							<button
-								onClick={() => setIsOpen(false)}
+								/* onClick={() => setIsOpen(false)} */
 								data-bs-dismiss='modal'
 								aria-label='Close'
 								type='button'
@@ -266,7 +264,7 @@ const MoreInfoModal = (props) => {
 								<AiOutlineCloseCircle size={25} />
 							</button>
 						</div>
-						<Overview setIsOpen={setIsOpen} />
+						<Overview /* setIsOpen={setIsOpen} */ />
 						{/* 		<VitalsSummary />
 						<Medication /> */}
 					</div>

@@ -29,7 +29,7 @@ const ActionsModal = () => {
 				<div className='relative w-full h-full max-w-2xl p-4 md:h-auto'>
 					<div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
 						<div className='flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600'>
-							<h3 className='text-xl font-semibold text-black dark:text-white'>Terms of Service</h3>
+							<h3 className='text-xl font-semibold text-black '>Terms of Service</h3>
 							<button
 								type='button'
 								className='text-gray-400 bg-transparent hover:bg-gray-200 hover:text-black rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white'
@@ -93,7 +93,7 @@ const Table = () => {
 			<div className='flex flex-col items-center justify-between w-full gap-5 lg:flex-row md:items-start lg:items-center '></div>
 			<div className='relative w-full overflow-x-auto rounded-md shadow-md'>
 				<table className='w-full text-sm text-left text-gray-500 dark:text-gray-400'>
-					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400'>
+					<thead className='pb-4 text-xs text-gray-700 uppercase bg-gray-100'>
 						<tr>
 							<th scope='col' className='px-6 py-3'>
 								Patient Name
@@ -116,8 +116,8 @@ const Table = () => {
 						</tr>
 					</thead>
 					<tbody>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b hover:bg-slate-50'>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap'>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -145,11 +145,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								Apple iMac
 							</th>
 							<td className='px-6 py-1'>Silver</td>
@@ -177,11 +174,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								Apple AirPods
 							</th>
 							<td className='px-6 py-1'>White</td>
@@ -209,11 +203,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								Apple iMac
 							</th>
 							<td className='px-6 py-1'>Silver</td>
@@ -241,11 +232,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								Apple AirPods
 							</th>
 							<td className='px-6 py-1'>White</td>
@@ -273,11 +261,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								iPad Pro
 							</th>
 							<td className='px-6 py-1'>Gold</td>
@@ -305,8 +290,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -334,8 +319,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -363,8 +348,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -392,8 +377,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -421,8 +406,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -450,8 +435,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -479,8 +464,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -508,8 +493,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -537,8 +522,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -566,8 +551,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -595,8 +580,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='my-5 text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap dark:text-white'>
+						<tr className='my-5 text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium whitespace-nowrap '>
 								Apple Watch
 							</th>
 							<td className='px-6 py-1'>Black</td>
@@ -624,11 +609,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								Magic Keyboard
 							</th>
 							<td className='px-6 py-4'>Black</td>
@@ -656,11 +638,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								Smart Folio iPad Air
 							</th>
 							<td className='px-6 py-1'>Blue</td>
@@ -688,11 +667,8 @@ const Table = () => {
 								</Link>
 							</td>
 						</tr>
-						<tr className='text-black bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-slate-50 dark:hover:bg-gray-600'>
-							<th
-								scope='row'
-								className='px-6 py-4 font-medium text-black whitespace-nowrap dark:text-white'
-							>
+						<tr className='text-black bg-white border-b '>
+							<th scope='row' className='px-6 py-4 font-medium text-black whitespace-nowrap '>
 								AirTag
 							</th>
 							<td className='px-6 py-1'>Silver</td>
@@ -724,8 +700,8 @@ const Table = () => {
 				</table>
 				<nav className='flex items-center justify-between p-4 bg-white' aria-label='Table navigation'>
 					<span className='text-sm font-normal text-gray-500 dark:text-gray-400'>
-						Showing <span className='font-semibold text-black dark:text-white'>1-20</span> of{' '}
-						<span className='font-semibold text-black dark:text-white'>100</span>
+						Showing <span className='font-semibold text-black '>1-20</span> of{' '}
+						<span className='font-semibold text-black '>100</span>
 					</span>
 					<ul className='inline-flex items-center -space-x-px'>
 						<li>
@@ -769,7 +745,7 @@ const Table = () => {
 							<a
 								href='#'
 								aria-current='page'
-								className='z-10 px-3 py-2 leading-tight border text-cyan-600 border-cyan-300 bg-cyan-50 hover:bg-cyan-100 hover:text-cyan-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white'
+								className='z-10 px-3 py-2 leading-tight border text-cyan-600 border-cyan-300 bg-cyan-50 hover:bg-cyan-100 hover:text-cyan-700 dark:border-gray-700 dark:bg-gray-700 '
 							>
 								3
 							</a>
