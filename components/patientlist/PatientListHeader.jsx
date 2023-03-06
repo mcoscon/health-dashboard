@@ -7,18 +7,18 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import NavBar from '../NavBar'
 const patients = [
 	{
-		icon: <FiUsers className='hidden p-2 rounded-full bg-cyan-100 sm:flex' size={'2em'} />,
+		icon: <FiUsers className='hidden p-2 text-cyan-600 sm:flex' size={'2.5em'} />,
 		title: 'Total Admitted',
-		text: '2000',
+		text: '300',
 	},
 	{
-		icon: <FiCheckSquare className='hidden p-2 bg-green-100 rounded-full sm:flex' size={'2em'} />,
+		icon: <FiCheckSquare className='hidden p-2 text-cyan-600 sm:flex' size={'2.5em'} />,
 		title: 'Active Patients',
-		text: '300',
+		text: '150',
 	},
 	,
 	{
-		icon: <FiWifi className='hidden p-2 bg-pink-100 rounded-full sm:flex' size={'2em'} />,
+		icon: <FiWifi className='hidden p-2 text-cyan-600 sm:flex' size={'2.5em'} />,
 		title: 'Online Devices',
 		text: '175',
 	},

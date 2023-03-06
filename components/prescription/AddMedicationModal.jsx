@@ -33,7 +33,7 @@ const PrescriptionInstruction = () => {
 	return (
 		<div className='mb-7'>
 			<h3 className='mb-5 text-gray-500'>INTAKE INSTRUCTIONS</h3>
-			<div className='flex flex-col rounded-lg bg-cyan-700 bg-opacity-10'>
+			<div className='flex flex-col p-2 rounded-lg bg-cyan-700 bg-opacity-10'>
 				<textarea
 					placeholder='Type in intake instructions here'
 					rows='3'

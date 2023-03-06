@@ -45,9 +45,14 @@ const BasicPatientInfo = () => {
 					<div className='flex justify-between flex-1 p-4 text-sm font-semibold text-gray-500 transition duration-300 bg-white cursor-pointer gap-7 align-center ease rounded-2xl basis-1'>
 						<div className='flex flex-col gap-4'>
 							<h4 className='text-sm uppercase text-cyan-900'>Wachinsky</h4>
-							<p>Start Date: 02/04/22</p>
-							<p>End Date: 02/04/22</p>
-							<p>Diagnosis: Asthma</p>
+							<div>
+								<p className='text-xs text-slate-400'>CARE DURATION</p>
+								<h4 className='text-black'>02/04/22 to 02/06/22</h4>
+							</div>
+							<div>
+								<h5 className='text-xs text-slate-400'>DIAGNOSIS</h5>
+								<h4 className='text-black'>Asthma</h4>
+							</div>
 						</div>
 						<div className='flex flex-col justify-between gap-4'>
 							<Link href='/patient'>
@@ -119,23 +124,23 @@ const MedicationCard = () => {
 				<div className='h-1 bg-cyan-600' style={{ width: '45%' }}></div>
 			</div>
 			<div className='flex justify-between gap-4 text-sm'>
-				<p>1st May 2022</p>
+				<h5 className='text-xs text-slate-400'>1ST MAY 2022</h5>
 				<p> to </p>
 				<p>2nd May 2022</p>
 			</div>
 			<div className='flex justify-between gap-4 text-sm'>
 				<div>
-					<h4 className='text-black'>Prescribed On:</h4>
-					<h4>1st May 2022</h4>
+					<h5 className='text-xs text-slate-400'>PRESCRIBED ON</h5>
+					<h4 className='text-black'>1st May 2022</h4>
 				</div>
 				<div>
-					<h4 className='text-black'>Quantity:</h4>
-					<h4>40</h4>
+					<h5 className='text-xs text-slate-400'>QUANTITY</h5>
+					<h4 className='text-black'>40</h4>
 				</div>
 			</div>
 			<div>
-				<h4 className='text-black'>Instructions:</h4>
-				<h4>Take one daily until finished. Take after meal.wefwefed</h4>
+				<h5 className='text-xs text-slate-400'>INSTRUCTIONS</h5>
+				<h4 className='text-black'>Take one daily until finished. Take after meal.wefwefed</h4>
 			</div>
 		</span>
 	)

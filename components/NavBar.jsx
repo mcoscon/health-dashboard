@@ -3,11 +3,12 @@ import { RiLogoutCircleLine, RiHandHeartLine, RiListUnordered, RiBluetoothLine, 
 import Link from 'next/link'
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
-
+import { TbBrandGoogleAnalytics } from 'react-icons/tb'
 const NavBar = (props) => {
 	/* 	const { hamburgerOpen, setHamburgerOpen } = props
 	console.log(hamburgerOpen) */
 	const [hamburgerOpen, setHamburgerOpen] = useState(false)
+	const [selectedLink, setSelectedLink] = useState(0)
 	const renderclassName = hamburgerOpen
 		? `shadow-md bg-cyan-900 w-60 h-full flex-col md:flex shadow-md ${
 				hamburgerOpen ? 'md:hidden fixed h-full z-50 top-0' : 'hidden top-0'
@@ -24,8 +25,9 @@ const NavBar = (props) => {
 			<div className={renderclassName} id='sidenavSecExample'>
 				<div className='px-6 pt-4 pb-2 mb-6'>
 					<a href='#!'>
-						<div className='flex items-center gap-5 text-white grow'>
-							<h2 className='text-xl '>Saint Bernards</h2>
+						<div className='flex gap-2 text-slate-200 grow'>
+							<h2 className='m-0 text-xl '>Med Metrics</h2>
+							<TbBrandGoogleAnalytics size={'1.38em'} />
 							{hamburgerOpen && (
 								<button onClick={() => setHamburgerOpen(false)}>
 									<AiOutlineCloseCircle />
@@ -37,8 +39,10 @@ const NavBar = (props) => {
 				<ul className='relative px-4'>
 					<Link href='/patientlist' className='relative'>
 						<a
-							className='flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm text-white transition duration-300 ease-in-out rounded-lg text-ellipsis whitespace-nowrap hover:text-cyan-600 hover:bg-white font-Karla-Bold'
-							data-mdb-ripple='true'
+							onClick={() => setSelectedLink(0)}
+							className={`flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm transition duration-200 ease-in-out rounded-lg text-ellipsis whitespace-nowrap  font-Karla-Bold ${
+								selectedLink === 0 ? 'text-white ' : 'text-slate-300 hover:text-slate-50'
+							}`}
 						>
 							<RiListUnordered size={20} />
 							Management
@@ -46,8 +50,10 @@ const NavBar = (props) => {
 					</Link>
 					<Link href='/prescriptions/' className='relative'>
 						<a
-							className='flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm text-white transition duration-300 ease-in-out rounded-lg text-ellipsis whitespace-nowrap hover:text-cyan-600 hover:bg-white font-Karla-Bold'
-							data-mdb-ripple='true'
+							onClick={() => setSelectedLink(1)}
+							className={`flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm transition duration-200 ease-in-out rounded-lg  text-ellipsis whitespace-nowrap font-Karla-Bold ${
+								selectedLink === 1 ? 'text-white ' : 'text-slate-300 hover:text-slate-50'
+							}`}
 						>
 							<RiBluetoothLine size={20} />
 							Prescriptions
@@ -55,8 +61,10 @@ const NavBar = (props) => {
 					</Link>
 					<Link href='/chats' className='relative'>
 						<a
-							className='flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm text-white transition duration-300 ease-in-out rounded-lg cursor-pointer text-ellipsis whitespace-nowrap hover:text-cyan-600 hover:bg-white font-Karla-Bold'
-							data-mdb-ripple='true'
+							onClick={() => setSelectedLink(2)}
+							className={`flex items-center gap-4 px-6 py-2 mb-6 overflow-hidden text-sm transition duration-200 ease-in-out rounded-lg  text-ellipsis whitespace-nowrap  font-Karla-Bold ${
+								selectedLink === 2 ? 'text-white ' : 'text-slate-300 hover:text-slate-50'
+							}`}
 						>
 							<RiChat1Line size={20} />
 							Chats
@@ -64,7 +72,13 @@ const NavBar = (props) => {
 					</Link>
 				</ul>
 				<div className='px-4 text-center '>
-					<button className='w-full py-2 text-sm text-white border-2 border-white rounded-lg font-Karla-Bold hover:border-transparent hover:bg-white hover:text-cyan-600'>
+					<button
+						className={`w-full py-2 text-sm text-white border-2 rounded-lg font-Karla-Bold ${
+							selectedLink === 3
+								? 'text-white border-white'
+								: 'text-slate-300 hover:text-slate-50 border-slate-300 hover:border-slate-50'
+						}`}
+					>
 						Log Out
 					</button>
 				</div>

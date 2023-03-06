@@ -26,7 +26,7 @@ const SideBarChat = () => {
 				<input
 					type='text'
 					id='table-search'
-					className='block w-full p-2 pl-10 text-sm text-gray-900 bg-white rounded-lg shadow-sm border-cyan-600 lg:w-80 focus:ring-cyan-600 focus:border-cyan-600 font-Karla-Regular'
+					className='block w-full p-2 pl-10 text-sm text-gray-900 bg-white border-2 rounded-lg shadow-sm border-cyan-600 lg:w-80 focus:ring-cyan-600 focus:border-cyan-600 font-Karla-Regular'
 					placeholder='Search for chats'
 				/>
 			</div>
@@ -39,10 +39,10 @@ const SideBarChat = () => {
 						}`}
 					>
 						<div className='flex flex-row gap-2'>
-							<div className='z-50 p-2 text-center text-white rounded-sm bg-cyan-900'>SI</div>
+							<div className='z-50 p-2 text-center text-white rounded-sm bg-cyan-900'>M.E</div>
 							<div>
 								<h4>Michael Evans</h4>
-								<h4>How are you feeling?</h4>
+								<h4 className='text-slate-400'>How are you feeling?</h4>
 							</div>
 						</div>
 						<div className='form-check'>
