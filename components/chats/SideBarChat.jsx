@@ -39,7 +39,7 @@ const SideBarChat = () => {
 						}`}
 					>
 						<div className='flex flex-row gap-2'>
-							<div className='z-50 p-2 text-center text-white rounded-sm bg-cyan-900'>M.E</div>
+							<div className='p-2 text-center text-white rounded-sm bg-cyan-900'>M.E</div>
 							<div>
 								<h4>Michael Evans</h4>
 								<h4 className='text-slate-400'>How are you feeling?</h4>

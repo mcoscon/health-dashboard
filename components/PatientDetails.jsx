@@ -3,6 +3,7 @@ import { BiBody, BiFile } from 'react-icons/bi'
 import { useState } from 'react'
 import DetailsModal from './DetailsModal'
 import Image from 'next/image'
+import profilePic from '../public/images/patient.png'
 const PatientDetails = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	return (
@@ -48,11 +49,11 @@ const PatientDetails = () => {
 					<div className='flex flex-col items-center justify-center gap-5'>
 						{/* <div className='w-[114px] h-[114px] bg-black'></div> */}
 						<Image
-							className='rounded-full'
-							src='/../public/images/patient.png'
-							alt='Profile Pic'
 							width='100px'
 							height='100px'
+							src='https://mdbcdn.b-cdn.net/img/new/avatars/1.webp'
+							className='rounded-full shadow-lg w-14 '
+							alt='Avatar'
 						/>
 						<button
 							type='button'

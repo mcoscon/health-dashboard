@@ -46,12 +46,12 @@ const BasicPatientInfo = () => {
 						<div className='flex flex-col gap-4'>
 							<h4 className='text-sm uppercase text-cyan-900'>Wachinsky</h4>
 							<div>
-								<p className='text-xs text-slate-400'>CARE DURATION</p>
-								<h4 className='text-black'>02/04/22 to 02/06/22</h4>
+								<p className='text-xs text-black'>CARE DURATION</p>
+								<h4 className='text-gray-500'>4 months</h4>
 							</div>
 							<div>
-								<h5 className='text-xs text-slate-400'>DIAGNOSIS</h5>
-								<h4 className='text-black'>Asthma</h4>
+								<h5 className='text-xs text-black'>DIAGNOSIS</h5>
+								<h4 className='text-gray-500'>Asthma</h4>
 							</div>
 						</div>
 						<div className='flex flex-col justify-between gap-4'>
@@ -123,24 +123,26 @@ const MedicationCard = () => {
 			<div className='w-full h-1 bg-gray-200'>
 				<div className='h-1 bg-cyan-600' style={{ width: '45%' }}></div>
 			</div>
-			<div className='flex justify-between gap-4 text-sm'>
-				<h5 className='text-xs text-slate-400'>1ST MAY 2022</h5>
-				<p> to </p>
-				<p>2nd May 2022</p>
-			</div>
-			<div className='flex justify-between gap-4 text-sm'>
-				<div>
-					<h5 className='text-xs text-slate-400'>PRESCRIBED ON</h5>
-					<h4 className='text-black'>1st May 2022</h4>
+			<div className='flex flex-col gap-4'>
+				<div className='flex justify-between gap-4 text-sm'>
+					<h5 className='text-xs text-gray-500'>1ST MAY 2022</h5>
+					<h5 className='text-xs text-gray-500'>to</h5>
+					<h5 className='text-xs text-gray-500'>2ND MAY 2022</h5>
+				</div>
+				<div className='flex justify-between gap-4 text-sm'>
+					<div>
+						<h5 className='text-xs text-black'>PRESCRIBED ON</h5>
+						<h4 className='text-gray-500'>1st May 2022</h4>
+					</div>
+					<div>
+						<h5 className='text-xs text-black'>QUANTITY</h5>
+						<h4 className='text-gray-500'>40</h4>
+					</div>
 				</div>
 				<div>
-					<h5 className='text-xs text-slate-400'>QUANTITY</h5>
-					<h4 className='text-black'>40</h4>
+					<h5 className='text-xs text-black'>INSTRUCTIONS</h5>
+					<h4 className='text-gray-500'>Take one daily until finished. Take after meal.wefwefed</h4>
 				</div>
-			</div>
-			<div>
-				<h5 className='text-xs text-slate-400'>INSTRUCTIONS</h5>
-				<h4 className='text-black'>Take one daily until finished. Take after meal.wefwefed</h4>
 			</div>
 		</span>
 	)

@@ -5,7 +5,7 @@ import SideBarChat from '../components/chats/SideBarChat'
 const Chats = () => {
 	return (
 		<div className='flex justify-start w-full xl:justify-center'>
-			<div className='flex flex-col justify-center h-full md:flex-row gap-7 p-7'>
+			<div className='flex flex-col justify-center h-full md:flex-row gap-7 p-7 md:max-w-screen-xl '>
 				<div className='md:basis-1/3'>
 					<SideBarChat />
 				</div>

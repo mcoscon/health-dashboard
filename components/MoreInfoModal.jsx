@@ -61,19 +61,19 @@ const Table = () => {
 						<table className='min-w-full text-center'>
 							<thead className='border-b'>
 								<tr className='border-b'>
-									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-500'>
 										Date
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-500'>
 										Sensor Input
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-500'>
 										Breathing Input
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-500'>
 										Symptoms Input
 									</th>
-									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-400'>
+									<th scope='col' className='px-6 py-4 text-sm font-bold text-gray-500'>
 										Medication
 									</th>
 								</tr>
@@ -94,22 +94,22 @@ const Table = () => {
 													</h4>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-100 text-rose-700 rounded-full '>
 														NOT COMPLETED
 													</span>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-100 text-emerald-700 rounded-full '>
 														COMPLETED
 													</span>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-100 text-emerald-700  rounded-full '>
 														COMPLETED
 													</span>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-100 text-rose-700 rounded-full '>
 														NOT COMPLETED
 													</span>
 												</td>
@@ -121,22 +121,22 @@ const Table = () => {
 													</h4>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-100 text-emerald-700 rounded-full '>
 														COMPLETED
 													</span>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-100 text-emerald-700 rounded-full '>
 														COMPLETED
 													</span>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-emerald-100 text-emerald-700 rounded-full '>
 														COMPLETED
 													</span>
 												</td>
 												<td className='px-6 py-4 text-sm font-light text-gray-900 whitespace-nowrap'>
-													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-500 text-white rounded-full '>
+													<span className='text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-rose-100 text-rose-700 rounded-full '>
 														NOT COMPLETED
 													</span>
 												</td>

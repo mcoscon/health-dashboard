@@ -72,15 +72,17 @@ const NavBar = (props) => {
 					</Link>
 				</ul>
 				<div className='px-4 text-center '>
-					<button
-						className={`w-full py-2 text-sm text-white border-2 rounded-lg font-Karla-Bold ${
-							selectedLink === 3
-								? 'text-white border-white'
-								: 'text-slate-300 hover:text-slate-50 border-slate-300 hover:border-slate-50'
-						}`}
-					>
-						Log Out
-					</button>
+					<Link href='/landing'>
+						<button
+							className={`w-full py-2 text-sm text-white border-2 rounded-lg font-Karla-Bold ${
+								selectedLink === 3
+									? 'text-white border-white'
+									: 'text-slate-300 hover:text-slate-50 border-slate-300 hover:border-slate-50'
+							}`}
+						>
+							Log Out
+						</button>
+					</Link>
 				</div>
 			</div>
 		</>
