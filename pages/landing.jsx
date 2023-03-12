@@ -19,17 +19,17 @@ const HeroSection = () => {
 							href='#'
 						>
 							<div className='flex items-center gap-2 text-cyan-900'>
-								<h1 className='text-lg'>Med Metrics</h1>
+								<h3 className='text-xl'>Med Metrics</h3>
 								<TbBrandGoogleAnalytics size={'1.38em'} />
 							</div>
 						</a>
 
 						<div className='flex items-center justify-center gap-4'>
 							<Link href='#services'>
-								<a className='hover:text-neutral-700 focus:text-neutral-700'>Services</a>
+								<a className='font-semibold hover:text-neutral-700 focus:text-neutral-700'>Services</a>
 							</Link>
 							<Link href='#contact'>
-								<a className='hover:text-neutral-700 focus:text-neutral-700'>Contact</a>
+								<a className='font-semibold hover:text-neutral-700 focus:text-neutral-700'>Contact</a>
 							</Link>
 						</div>
 						<Link href='/patientlist'>
@@ -47,12 +47,13 @@ const HeroSection = () => {
 			<div className='flex items-center justify-center w-full max-w-5xl gap-8 p-4'>
 				<div className='flex flex-col gap-6 basis-1/3'>
 					<h1 className='text-4xl text-cyan-900'>
-						Data dashboards <br />
-						help to grow your <br />
+						Medical Dashboards <br />
+						to help grow your <br />
 						business
 					</h1>
 					<p>
-						Adapt, innovate and thrive with more value from every transaction flowing through your business
+						Real-time data analysis and insights that can help healthcare professionals make informed
+						decisions about patient care and optimize workflows.
 					</p>
 					<button
 						type='button'
