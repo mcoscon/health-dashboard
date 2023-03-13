@@ -20,11 +20,11 @@ const HeroSection = () => {
 						>
 							<div className='flex items-center gap-2 text-cyan-900'>
 								<h3 className='text-xl'>Med Metrics</h3>
-								<TbBrandGoogleAnalytics size={'1.38em'} />
+								<TbBrandGoogleAnalytics size={'1rem'} />
 							</div>
 						</a>
 
-						<div className='flex items-center justify-center gap-4'>
+						<div className='items-center justify-center hidden gap-4 md:flex md:visible'>
 							<Link href='#services'>
 								<a className='font-semibold hover:text-neutral-700 focus:text-neutral-700'>Services</a>
 							</Link>
@@ -32,6 +32,7 @@ const HeroSection = () => {
 								<a className='font-semibold hover:text-neutral-700 focus:text-neutral-700'>Contact</a>
 							</Link>
 						</div>
+
 						<Link href='/patientlist'>
 							<button
 								type='button'
@@ -44,7 +45,7 @@ const HeroSection = () => {
 					</div>
 				</div>
 			</nav>
-			<div className='flex items-center justify-center w-full max-w-5xl gap-8 p-4'>
+			<div className='flex flex-col items-center justify-center w-full max-w-5xl gap-8 p-4 md:flex-row'>
 				<div className='flex flex-col gap-6 basis-1/3'>
 					<h1 className='text-4xl text-cyan-900'>
 						Medical Dashboards <br />
@@ -55,6 +56,7 @@ const HeroSection = () => {
 						Real-time data analysis and insights that can help healthcare professionals make informed
 						decisions about patient care and optimize workflows.
 					</p>
+
 					<button
 						type='button'
 						className='px-4 py-2 text-xs text-white transition duration-150 ease-in-out rounded-lg w-max bg-cyan-700 shadow-btnShadow font-Karla-Heavy hover:bg-cyan-600 hover:text-white active:shadow-lg'
@@ -82,7 +84,7 @@ const HeroSection = () => {
 						</div>
 					</div>
 				</div>
-				<div className='flex justify-center basis-2/3'>
+				<div className='justify-center hidden md:flex basis-2/3 md:visible'>
 					<div className='w-11/12'>
 						<Image src={landing_main} fill alt='landing_main' />
 					</div>
@@ -96,7 +98,7 @@ const Services = () => {
 	return (
 		<div className='flex items-center justify-center w-full bg-stone-100' id='services'>
 			<div className='flex flex-col w-full max-w-5xl gap-10 p-4 my-16'>
-				<div className='grid grid-cols-2 gap-8 '>
+				<div className='grid grid-cols-1 gap-8 md:grid-cols-2 '>
 					<div>
 						<h4 className='mb-4 text-cyan-700'>Services</h4>
 						<h1 className='text-4xl text-cyan-900 '>
@@ -104,7 +106,7 @@ const Services = () => {
 							for your business
 						</h1>
 					</div>
-					<div className='self-center justify-self-end'>
+					<div className='self-center md:justify-self-end'>
 						<Link href='/patientlist'>
 							<button
 								type='button'
@@ -116,8 +118,8 @@ const Services = () => {
 						</Link>
 					</div>
 				</div>
-				<div className='grid grid-cols-2 gap-8'>
-					<div className='flex items-center gap-4'>
+				<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+					<div className='flex items-center order-last gap-4 md:order-first'>
 						<div className='p-2 rounded-full bg-cyan-700 bg-opacity-10'>
 							<TbActivityHeartbeat size={'2rem'} />
 						</div>
@@ -132,8 +134,8 @@ const Services = () => {
 					</div>
 					<Image src={vitals} fill alt='vitals' className='rounded-lg' />
 				</div>
-				<div className='grid grid-cols-2 gap-8'>
-					<div className='flex items-center gap-4'>
+				<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+					<div className='flex items-center order-last gap-4 md:order-first'>
 						<div className='p-2 rounded-full bg-cyan-700 bg-opacity-10'>
 							<TbMessages size={'2rem'} />
 						</div>
@@ -148,8 +150,8 @@ const Services = () => {
 					</div>
 					<Image src={chats} fill alt='chats' className='rounded-lg' />
 				</div>
-				<div className='grid grid-cols-2 gap-8'>
-					<div className='flex items-center gap-4'>
+				<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+					<div className='flex items-center order-last gap-4 md:order-first'>
 						<div className='p-2 rounded-full bg-cyan-700 bg-opacity-10'>
 							<TbPill size={'2rem'} />
 						</div>
@@ -175,7 +177,7 @@ const Footer = () => {
 		<div className='flex flex-col items-center w-full bg-orange-50 items h-max' id='contact'>
 			<div className='flex flex-col w-full max-w-5xl p-4 my-16'>
 				<h4 className='mb-4 text-cyan-700'>Contact us</h4>
-				<div className='grid grid-cols-3 gap-8'>
+				<div className='grid grid-cols-1 gap-8 md:grid-cols-3'>
 					<div className='flex flex-col gap-2'>
 						<h1 className='text-2xl text-cyan-900'>Talk with us</h1>
 						<div>
